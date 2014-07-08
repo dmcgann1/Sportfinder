@@ -6,7 +6,8 @@ class FacilitiesController < ApplicationController
   # end
 
   def show
-    @facility = Facility.find(params[:id])
+    @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
+    @facility = @client.spot(params[:reference])
   end
 
   def search
