@@ -7,7 +7,11 @@ class FacilitiesController < ApplicationController
 
   def show
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
-    @facility = @client.spot(params[:reference])
+    if Facility.where(identifier: params[:identifier]).exists?
+      @facility = Facility.where(identifier: params[:identifier])
+    else
+      @facility = Facility.google_create(@client.spot(params[:reference]))
+    end
   end
 
   def search
@@ -19,6 +23,7 @@ class FacilitiesController < ApplicationController
       #Below is to make into string for google map search
       @search = " #{params[:sport_type]} near #{params[:area]}"
       @facilities = @client.spots_by_query(@search)
+
     else
       #need to include a warning message to include sport and area
       redirect_to root_path

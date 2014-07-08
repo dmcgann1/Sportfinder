@@ -1,7 +1,7 @@
 <h3><%= @facility.name %></h3>
 <br>
-<% if @facility.photos.present? %>
-  <img class="search_images" src=<%= @facility.photos[0].fetch_url(800) %>>
+<% if @facility.img_url.present? %>
+  <img class="search_images" src=<%= @facility.img_url %>>
 <% else %>
   <img class="search_images" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w">
 <% end %>
