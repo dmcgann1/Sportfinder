@@ -1,8 +1,20 @@
 This is the search view
-This is where search results will be shown
 <% @facilities.each do |facility| %>
 <%= facility.name %>
-<%= facility.sport_type %>
-<%= facility.area %>
+<br>
+<!-- <img src=<%= facility.photos[].fetch_url() %>> -->
+<br>
+<%= facility.types %>
+<br>
+<%= facility.formatted_phone_number %>
+<br>
+<%= facility.formatted_address %>
+<br>
+<%= facility.rating %>
+<br>
+<%= facility.url %>
+<br>
+<br>
+<br>
 <br>
 <% end %>

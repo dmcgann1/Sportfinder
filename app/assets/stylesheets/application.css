@@ -20,8 +20,6 @@
 
  body {
   padding-top: 100px;
-  background-image: url("http://i.imgur.com/z78Kjoa.jpg");
-  background-size: cover;
   }
 
  .navbar {
@@ -30,16 +28,13 @@
   font-style: italic;
 }
 
-
 .navbar-brand {
   font-size: 40px;
 }
 
- .signin {
-  font-size: 17px;
- }
-
-.navbar-collapse {
-  display: inline;
+body.homepage {
+  background-image: url("http://i.imgur.com/z78Kjoa.jpg");
+  background-size: cover;
 }
+
 
