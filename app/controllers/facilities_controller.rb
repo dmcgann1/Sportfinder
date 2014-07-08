@@ -1,6 +1,13 @@
 class FacilitiesController < ApplicationController
 
-  def index
+  # def index
+  # end
+
+  # def show
+  #   @facility = Facility.new
+  # end
+
+  def search
     if params[:sport_type].present? && params[:area].present?
       @facilities = Facility.where("sport_type = ? AND area = ?", params[:sport_type], params[:area])
 
@@ -10,13 +17,6 @@ class FacilitiesController < ApplicationController
       #need to include a warning message to include sport and area
       redirect_to root_path
     end
-  end
-
-  def show
-    @facility = Facility.new
-  end
-
-  def search
 
   end
 

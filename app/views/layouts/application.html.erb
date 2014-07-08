@@ -26,7 +26,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <!-- <form class="navbar-form navbar-left" role="search"> -->
-        <%= form_tag('/facilities/search', method: 'post', html: {class: 'navbar-form navbar-left'}) do %>
+        <%= form_tag('/facilities/search', method: 'post', class: 'navbar-form navbar-left form-inline') do %>
         Find
         <%= text_field_tag :sport_type, params[:sport_type], placeholder: "Enter a Sport...", class: "form-control" %>
         in
