@@ -5,9 +5,9 @@ class FacilitiesController < ApplicationController
   # def index
   # end
 
-  # def show
-  #   @facility = Facility.new
-  # end
+  def show
+    @facility = Facility.find(params[:id])
+  end
 
   def search
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])

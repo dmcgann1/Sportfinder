@@ -29,12 +29,17 @@
 }
 
 .navbar-brand {
-  font-size: 40px;
+  font-size: 30px;
+  color: white;
 }
 
 body.homepage {
   background-image: url("http://i.imgur.com/z78Kjoa.jpg");
   background-size: cover;
+}
+
+.search_images {
+  max-width: 120px;
 }
 
 
