@@ -1,0 +1,9 @@
+Attempting to build in the search bar in the form of a form prior to building it into the navbar
+
+<%= form_tag facilities_path, method: 'get' do %>
+  <div class="field">
+    <%= text_field_tag :sport_type, params[:sport_type] %>
+    <%= text_field_tag :area, params[:area] %><br>
+    <%= submit_tag "Search", name: nil %>
+
+<% end %>

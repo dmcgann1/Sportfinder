@@ -24,20 +24,21 @@
   background-size: cover;
   }
 
+ .navbar {
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  font-style: italic;
+}
+
+
+.navbar-brand {
+  font-size: 40px;
+}
+
  .signin {
   font-size: 17px;
  }
 
- .navbar {
-  background-color: rgba(0,0,0,0.75);
-  color: white;
-  font-family: 'Lobster Two', cursive;
-  font-style: italic;
-}
-
-button a {
-  color: white;
-}
-table {
-  margin-top: 20px;
+.navbar-form {
+  display: inline;
 }
