@@ -16,6 +16,9 @@ class Facility < ActiveRecord::Base
   if photo
     f.update(img_url: photo.fetch_url(800))
     f.save!
+  else
+    f.update(img_url: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w")
+    f.save!
   end
 
     return f

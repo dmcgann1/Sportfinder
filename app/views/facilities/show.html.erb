@@ -1,10 +1,6 @@
 <h3><%= @facility.name %></h3>
 <br>
-<% if @facility.img_url.present? %>
-  <img class="search_images" src=<%= @facility.img_url %>>
-<% else %>
-  <img class="search_images" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w">
-<% end %>
+<img class="search_images" src=<%= @facility.img_url %>>
 <br>
 <%= @facility.formatted_phone_number %>
 <br>
@@ -17,4 +13,4 @@ Rating: <%= @facility.rating %>
 (<%= @facility.reviews.count %> reviews)
 <br>
 
-<%= link_to('New Review', reviews_new_path) %>
+<%= link_to('New Review', new_facility_review_path(@facility)) %>

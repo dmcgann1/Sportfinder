@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_facility
+  before_action :set_facility, :authenticate_user!
 
   def new
     @review = Review.new
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
   end
 
   def set_facility
-    @facility = Facility.find(params[:id])
+    @facility = Facility.find(params[:facility_id])
   end
 
 end

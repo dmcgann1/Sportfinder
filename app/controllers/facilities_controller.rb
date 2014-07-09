@@ -3,7 +3,7 @@ class FacilitiesController < ApplicationController
   def show
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
     if Facility.where(identifier: params[:identifier]).exists?
-      @facility = Facility.where(identifier: params[:identifier])
+      @facility = Facility.find_by_identifier(params[:identifier])
     else
       @facility = Facility.google_create(@client.spot(params[:reference]))
     end
