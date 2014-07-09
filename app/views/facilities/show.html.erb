@@ -14,3 +14,10 @@ Rating: <%= @facility.rating %>
 <br>
 
 <%= link_to('New Review', new_facility_review_path(@facility)) %>
+<br>
+
+<% @facility.reviews.each do |review| %>
+<%= review.user.email %>
+<%= review.body %>
+<br>
+<% end %>

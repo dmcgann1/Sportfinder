@@ -10,10 +10,10 @@ class ReviewsController < ApplicationController
     @review.facility_id = params[:facility_id]
 
     if @review.save
-      redirect_to facility_path(params[:facility_id])
+      redirect_to facility_display_path(params[:facility_id])
     else
       flash.now[:alert] = @review.errors.full_messages.join(', ')
-      redirect_to facility_path(params[:facility_id])
+      redirect_to facility_display_path(params[:facility_id])
     end
 
 
