@@ -1,10 +1,5 @@
 class FacilitiesController < ApplicationController
 
-
-
-  # def index
-  # end
-
   def show
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
     if Facility.where(identifier: params[:identifier]).exists?
