@@ -2,7 +2,12 @@ class ReviewsController < ApplicationController
   before_action :set_facility, :authenticate_user!
 
   def new
-    @review = Review.new
+    if current_user.reviews.find_by_facility_id(@facility)
+      # flash a warning
+      redirect_to :back
+    else
+      @review = Review.new
+    end
   end
 
   def create
