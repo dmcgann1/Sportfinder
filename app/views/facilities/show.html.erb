@@ -1,5 +1,11 @@
 <h3><%= @facility.name %></h3>
 <br>
+<% if current_user.likes.find_by_facility_id(@facility) %>
+  <%= button_to('Liked', facility_likes_path(@facility), disabled: true) %>
+<% else %>
+  <%= button_to('Like', facility_likes_path(@facility)) %>
+<% end %>
+<br>
 <img class="search_images" src=<%= @facility.img_url %>>
 <br>
 <%= @facility.formatted_phone_number %>

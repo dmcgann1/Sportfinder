@@ -17,4 +17,9 @@ get '/facilities/:facility_id' => 'facilities#show', as: :facility_display
 resources :reviews, only: [] do
   resources :votes, only: [:create]
 end
+
+resources :facilities, only: [] do
+  resources :likes, only: [:create]
+end
+
 end
