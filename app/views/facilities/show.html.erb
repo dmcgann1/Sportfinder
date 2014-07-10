@@ -25,9 +25,11 @@ Rating: <%= @facility.rating %>
 <% @facility.reviews.sort_by(&:score).reverse.each do |review| %>
 <%= review.user.email %>
 <%= review.body %>
+<% if current_user.id == review.user_id %>
 <%= link_to('Edit', edit_facility_review_path(review, facility_id: @facility.id)) %>
  |
 <%= link_to 'Delete', facility_review_path(review, facility_id: @facility.id), method: :delete, data: {confirm: 'Are you sure?'} %>
+<% end %>
 <br>
 Votes (<%= review.score %>)
 <%= link_to 'Useful?', review_votes_path(review, is_up: true), method: :post %>
