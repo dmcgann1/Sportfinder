@@ -15,13 +15,19 @@ class FacilitiesController < ApplicationController
   def search
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
     if params[:sport_type].present? && params[:area].present?
+      if Facility.filter_search(params[:sport_type])
 
       #Make into string for google map search
       @search = " #{params[:sport_type]} near #{params[:area]}"
       @facilities = @client.spots_by_query(@search)
 
+      else
+        flash[:alert] = "Sorry we don't have any information for that sport"
+        redirect_to root_path
+      end
+
     else
-      #need to include a warning message to include sport and area
+      flash[:alert] = "Need to enter a sport and a location"
       redirect_to root_path
     end
 
