@@ -16,7 +16,7 @@ Rating: <%= @facility.rating %>
 <%= link_to('New Review', new_facility_review_path(@facility)) %>
 <br>
 
-<% @facility.reviews.each do |review| %>
+<% @facility.reviews.sort_by(&:score).reverse.each do |review| %>
 <%= review.user.email %>
 <%= review.body %>
 <br>
