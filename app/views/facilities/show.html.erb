@@ -32,8 +32,8 @@ Rating: <%= @facility.rating %>
 <% end %>
 <br>
 Votes (<%= review.score %>)
-<%= link_to 'Useful?', review_votes_path(review, is_up: true), method: :post %>
-<%= link_to 'Not Useful?', review_votes_path(review, is_up: false), method: :post %>
+<%= button_to 'Useful?', review_votes_path(review, is_up: true) %>
+<%= button_to 'Not Useful?', review_votes_path(review, is_up: false) %>
 <br>
 
 <br>
