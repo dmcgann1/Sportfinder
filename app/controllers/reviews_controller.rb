@@ -3,8 +3,7 @@ class ReviewsController < ApplicationController
 
   def new
     if current_user.reviews.find_by_facility_id(@facility)
-      # Need to include  a warning that review has already been created
-      # flash.now[:alert] = "You have already reviewed this facility"
+      flash[:alert] = "Already created review"
       redirect_to :back
     else
       @review = Review.new
@@ -30,7 +29,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-        redirect_to facility_display_path(params[:facility_id])
+      redirect_to facility_display_path(params[:facility_id])
     else
       render :edit
     end

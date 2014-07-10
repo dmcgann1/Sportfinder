@@ -5,9 +5,11 @@ class CreateFacilities < ActiveRecord::Migration
       t.integer :formatted_phone_number
       t.text :formatted_address
       t.decimal :rating
-      t.text :url
+      t.text :website
       t.text :img_url
+      t.integer :reviews
       t.text :reference
+      t.text :opening_hours
     end
   end
 end

@@ -9,7 +9,7 @@ class Facility < ActiveRecord::Base
     formatted_phone_number: object.formatted_phone_number,
     formatted_address: object.formatted_address,
     rating: object.rating,
-    url: object.url,
+    website: object.website,
     identifier: object.id
   )
 

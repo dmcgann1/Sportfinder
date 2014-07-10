@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20140710010522) do
     t.integer "formatted_phone_number"
     t.text    "formatted_address"
     t.decimal "rating"
-    t.text    "url"
+    t.text    "website"
     t.text    "img_url"
+    t.integer "reviews"
+    t.text    "opening_hours"
     t.string  "identifier"
   end
 
