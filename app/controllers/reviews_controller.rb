@@ -25,9 +25,6 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
-    # if @review.user_id != current_user.id
-    #   redirect_to :back
-    # end
   end
 
   def update
@@ -41,9 +38,6 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    # if @review.user_id != current_user.id
-    #   redirect_to :back
-    # end
 
     @review.destroy
     redirect_to facility_display_path(params[:facility_id])
