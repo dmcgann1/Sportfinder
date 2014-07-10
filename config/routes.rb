@@ -9,7 +9,7 @@ post '/facilities' => 'facilities#show', as: :facility
 
 #get '/facilities/:id/reviews/new' => 'reviews#new', as: :reviews_new
 resources :facilities, only: [] do
-  resources :reviews, only: [:new, :create]
+  resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
 
 get '/facilities/:facility_id' => 'facilities#show', as: :facility_display

@@ -19,12 +19,15 @@ Rating: <%= @facility.rating %>
 (<%= @facility.reviews.count %> reviews)
 <br>
 
-<%= link_to('New Review', new_facility_review_path(@facility)) %>
+<%= link_to('New Review', new_facility_review_path(@facility.id)) %>
 <br>
 
 <% @facility.reviews.sort_by(&:score).reverse.each do |review| %>
 <%= review.user.email %>
 <%= review.body %>
+<%= link_to('Edit', edit_facility_review_path(review, facility_id: @facility.id)) %>
+ |
+<%= link_to 'Delete', facility_review_path(review, facility_id: @facility.id), method: :delete, data: {confirm: 'Are you sure?'} %>
 <br>
 Votes (<%= review.score %>)
 <%= link_to 'Useful?', review_votes_path(review, is_up: true), method: :post %>
