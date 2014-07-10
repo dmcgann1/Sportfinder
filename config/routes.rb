@@ -13,4 +13,8 @@ resources :facilities, only: [] do
   end
 
 get '/facilities/:facility_id' => 'facilities#show', as: :facility_display
+
+resources :reviews, only: [] do
+  resources :votes, only: [:create]
+end
 end

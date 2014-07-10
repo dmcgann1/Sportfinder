@@ -20,4 +20,10 @@ Rating: <%= @facility.rating %>
 <%= review.user.email %>
 <%= review.body %>
 <br>
+Votes (<%= review.score %>)
+<%= link_to 'Useful?', review_votes_path(review, is_up: true), method: :post %>
+<%= link_to 'Not Useful?', review_votes_path(review, is_up: false), method: :post %>
+<br>
+
+<br>
 <% end %>

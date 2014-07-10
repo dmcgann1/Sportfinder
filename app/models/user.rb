@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :reviews
   has_many :votes
+
+  def vote_for(review)
+    review.votes.find_by(user_id: id)
+  end
 end
