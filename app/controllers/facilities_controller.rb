@@ -26,4 +26,8 @@ class FacilitiesController < ApplicationController
     end
 
   end
+
+  def favourites
+    @facilities = Facility.find(current_user.likes.map(&:facility_id).each {|i| i})
+  end
 end

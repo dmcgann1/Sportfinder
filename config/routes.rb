@@ -22,4 +22,5 @@ resources :facilities, only: [] do
   resources :likes, only: [:create]
 end
 
+get '/favourites' => 'facilities#favourites', as: :favourites
 end

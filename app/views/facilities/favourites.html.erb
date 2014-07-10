@@ -1,0 +1,28 @@
+<table class="table table-hover">
+  <thead>
+  <h3>Liked Facilities:</h3>
+  </thead>
+  <tbody>
+    <% counter = 1 %>
+    <% @facilities.each do |facility| %>
+      <tr>
+      <td>
+      <h3><%= counter %> <%= facility.name %></h3>
+      <br>
+      <img class="search_images" src=<%= facility.img_url %>>
+      <br>
+      <%= facility.formatted_phone_number %>
+      <br>
+      <%= facility.formatted_address %>
+      <br>
+      Rating: <%= facility.rating %>
+      <br>
+      <%= facility.url %>
+      <br>
+      <% counter += 1 %>
+      </td>
+      </tr>
+  <% end %>
+
+  </tbody>
+</table>
