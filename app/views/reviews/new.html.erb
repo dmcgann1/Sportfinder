@@ -1,9 +1,5 @@
-<%= form_for [@facility, @review] do |f| %>
-  <div class="field">
-    <%= f.label "Add a new review" %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
+<%= bootstrap_form_for [@facility, @review] do |f| %>
+    <%= f.text_area :body,label: "New Review" %>
     <%= f.submit %>
-  </div>
 <% end %>
+

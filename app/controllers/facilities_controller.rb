@@ -4,8 +4,7 @@ class FacilitiesController < ApplicationController
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
     if Facility.where(identifier: params[:identifier]).exists?
       @facility = Facility.find_by_identifier(params[:identifier])
-    elsif
-      Facility.where(id: params[:facility_id]).exists?
+    elsif Facility.where(id: params[:facility_id]).exists?
       @facility = Facility.find(params[:facility_id])
     else
       @facility = Facility.google_create(@client.spot(params[:reference]))

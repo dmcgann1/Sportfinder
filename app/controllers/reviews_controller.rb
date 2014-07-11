@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
   def new
     if current_user.reviews.find_by_facility_id(@facility)
-      flash[:alert] = "Already created review"
+      flash[:alert] = "You have already created a review for this facility. Please select 'Edit' to edit your review."
       redirect_to :back
     else
       @review = Review.new

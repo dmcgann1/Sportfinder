@@ -3,14 +3,16 @@
 <head>
   <title>SportFinder</title>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
+
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class='container'>
+<%= render 'layouts/messages' %>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,8 +53,6 @@
       </div>
     </div>
    </nav>
-
-  <% flash.each do |name, msg| %> <% if msg.is_a?(String) %> <%= content_tag :div, msg, :class => "flash_#{name}" %> <% end %> <% end %>
   <body class="<%= @home_page ? 'homepage' : ''%>">
 
 <%= yield %>
