@@ -16,11 +16,4 @@ class VotesController < ApplicationController
     redirect_to facility_display_path(@review.facility_id)
 
   end
-
-  private
-
-  # def set_review
-  #   @review = @facility.reviews.find(params[:id])
-  # end
-
 end

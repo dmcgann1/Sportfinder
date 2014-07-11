@@ -15,7 +15,7 @@ class FacilitiesController < ApplicationController
   def search
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
     if params[:sport_type].present? && params[:area].present?
-      if Facility.filter_search(params[:sport_type])
+      if Facility.filter_search(params[:sport_type].capitalize)
 
       #Make into string for google map search
       @search = " #{params[:sport_type]} near #{params[:area]}"
@@ -34,6 +34,7 @@ class FacilitiesController < ApplicationController
   end
 
   def favourites
+    authenticate_user!
     @facilities = Facility.find(current_user.likes.map(&:facility_id).each {|i| i})
   end
 end

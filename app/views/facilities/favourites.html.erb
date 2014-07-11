@@ -1,6 +1,6 @@
 <table class="table table-hover">
   <thead>
-  <h3>Liked Facilities:</h3>
+  <h3>Liked Facilities</h3>
   </thead>
   <tbody>
     <% counter = 1 %>
@@ -8,17 +8,23 @@
       <tr>
       <td>
       <h3><%= counter %> <%= link_to facility.name, facility_display_path(facility) %></h3>
-      <br>
       <img class="search_images" src=<%= facility.img_url %>>
       <br>
-      <%= facility.formatted_phone_number %>
+      <% if facility.formatted_address != nil %>
+      Address: <%= facility.formatted_address %>
       <br>
-      <%= facility.formatted_address %>
+      <% end %>
+      <% if facility.formatted_phone_number != 0 %>
+      Phone: <%= facility.formatted_phone_number %>
       <br>
+      <% end %>
+      <% if facility.rating != nil %>
       Rating: <%= facility.rating %>
       <br>
-      <%= facility.website %>
-      <br>
+      <% end %>
+      <% if facility.website != nil %>
+      Website: <a href = <%= facility.website %>><%= facility.website %></a>
+      <% end %>
       <% counter += 1 %>
       </td>
       </tr>

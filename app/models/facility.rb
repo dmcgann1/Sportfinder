@@ -1013,14 +1013,7 @@ Zui Quan)
   end
 
   def self.filter_search(param)
-    param.split.each do |w|
-      if FILTER_VALUES.include?(w)
-        return true
-        break
-      else
-        return false
-      end
-    end
+    param.split.any?{ |word| FILTER_VALUES.include?(word) }
   end
 
 

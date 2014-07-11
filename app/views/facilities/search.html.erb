@@ -1,6 +1,6 @@
 <table class="table table-hover">
   <thead>
-  <h3>Search Results:</h3>
+  <h3>Search Results</h3>
   </thead>
   <tbody>
     <% counter = 1 %>
@@ -8,21 +8,27 @@
       <tr>
       <td>
       <h3><%= counter %> <%= link_to facility.name, facility_path(facility, reference: facility.reference, identifier: facility.id), method: :post %></h3>
-      <br>
       <% if facility.photos.present? %>
         <img class="search_images" src=<%= facility.photos[0].fetch_url(800) %>>
       <% else %>
         <img class="search_images" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w">
       <% end %>
       <br>
-      <%= facility.formatted_address %>
+      <% if facility.formatted_address != nil %>
+      Address: <%= facility.formatted_address %>
       <br>
-      <%= facility.formatted_phone_number %>
+      <% end %>
+      <% if facility.formatted_phone_number != nil %>
+      Phone: <%= facility.formatted_phone_number %>
       <br>
+      <% end %>
+      <% if facility.rating != nil %>
       Rating: <%= facility.rating %>
       <br>
-      <%= facility.website %>
-      <br>
+      <% end %>
+      <% if facility.website != nil %>
+      Website: <a href = <%= facility.website %>><%= facility.website %></a>
+      <% end %>
       <% counter += 1 %>
       </td>
       </tr>

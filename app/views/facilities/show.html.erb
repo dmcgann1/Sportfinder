@@ -1,40 +1,74 @@
-<h3><%= @facility.name %></h3>
-<br>
-<% if current_user.likes.find_by_facility_id(@facility) %>
-  <%= button_to('Liked', facility_likes_path(@facility), disabled: true) %>
-<% else %>
-  <%= button_to('Like', facility_likes_path(@facility)) %>
-<% end %>
-<br>
-<img class="search_images" src=<%= @facility.img_url %>>
-<br>
-<%= @facility.formatted_phone_number %>
-<br>
-<%= @facility.formatted_address %>
-<br>
-Rating: <%= @facility.rating %>
-<br>
-<a href = <%= @facility.website %>><%= @facility.website %></a>
-<br>
-(<%= @facility.reviews.count %> reviews)
-<br>
+<div class='row fac-title'>
+  <div class='col-md-12'>
+    <h3><%= @facility.name %>    <% if user_signed_in? %>
+    <% if current_user.likes.find_by_facility_id(@facility) %>
+      <%= button_to 'Liked', facility_likes_path(@facility), disabled: true, class: 'btn btn-primary' %>
+    <% else %>
+      <%= button_to 'Like', facility_likes_path(@facility), class: 'btn btn-primary' %>
+    <% end %>
+    <% end %></h3>
+  </div>
+</div>
+<div class='row fac-info'>
+  <div class='col-md-2'>
+    <img class="display_images" src=<%= @facility.img_url %>>
+  </div>
+  <div class='col-md-10 fac-data'>
+    <% if @facility.formatted_address != nil %>
+    Address: <%= @facility.formatted_address %>
+    <br>
+    <% end %>
+    <% if @facility.formatted_phone_number != 0 %>
+    Phone: <%= @facility.formatted_phone_number %>
+    <br>
+    <% end %>
+    <% if @facility.rating != nil %>
+    Rating: <%= @facility.rating %>
+    <br>
+    <% end %>
+    <% if @facility.website != nil %>
+    Website: <a href = <%= @facility.website %>><%= @facility.website %></a>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to('New Review', new_facility_review_path(@facility.id)) %>
-<br>
+<table class="table table-hover">
+  <thead>
+  <div class='col-md-8'>
+    <h3>Reviews</h3>
+  </div>
+  <div class='col-md-4'>
+    <%= button_to('Add a Review', new_facility_review_path(@facility.id), method: :get, class: 'btn btn-primary pull-right' ) %>
+  </div>
+  </thead>
+  <tbody>
+    <% @facility.reviews.sort_by(&:score).reverse.each do |review| %>
+      <tr>
+      <td class="col-md-1">
+      <small>
+      <%= review.user.email %>
+      <br>
+      Score (<%= review.score %>)
+      </small>
+      </td>
+      <td class="col-md-9"> <%= review.body %>
+      </td>
+      <td class="col-md-2">
+          <% if user_signed_in? %>
+          <% if current_user.id == review.user_id %>
+          <div class="btn-group">
+          <%= button_to 'Edit', edit_facility_review_path(review, facility_id: @facility.id), method: :get, class: 'btn btn-primary btn-sm' %>
+          <%= button_to 'Delete', facility_review_path(review, facility_id: @facility.id), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: 'Are you sure?'} %>
+          </div>
+          <% else %>
+          <%= button_to 'Useful', review_votes_path(review, is_up: true), class: 'btn btn-success btn-sm' %>
+          <%= button_to 'Not Useful', review_votes_path(review, is_up: false), class: 'btn btn-danger btn-sm' %>
+          <% end %>
+          <% end %>
+      </td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
 
-<% @facility.reviews.sort_by(&:score).reverse.each do |review| %>
-<%= review.user.email %>
-<%= review.body %>
-<% if current_user.id == review.user_id %>
-<%= link_to('Edit', edit_facility_review_path(review, facility_id: @facility.id)) %>
- |
-<%= link_to 'Delete', facility_review_path(review, facility_id: @facility.id), method: :delete, data: {confirm: 'Are you sure?'} %>
-<% end %>
-<br>
-Votes (<%= review.score %>)
-<%= button_to 'Useful?', review_votes_path(review, is_up: true) %>
-<%= button_to 'Not Useful?', review_votes_path(review, is_up: false) %>
-<br>
 
-<br>
-<% end %>
