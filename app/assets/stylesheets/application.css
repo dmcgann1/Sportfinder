@@ -43,10 +43,6 @@ body.homepage {
   background-size: cover;
 }
 
-body {
-  background-color: rgba(245, 130, 32, 0.07);
-}
-
 .search_images {
   max-width: 120px;
 }

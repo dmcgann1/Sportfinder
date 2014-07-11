@@ -14,7 +14,7 @@
       Address: <%= facility.formatted_address %>
       <br>
       <% end %>
-      <% if facility.formatted_phone_number != 0 %>
+      <% if facility.formatted_phone_number != nil && facility.formatted_phone_number != 0 %>
       Phone: <%= facility.formatted_phone_number %>
       <br>
       <% end %>
