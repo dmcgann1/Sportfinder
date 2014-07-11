@@ -2,9 +2,9 @@
   <div class='col-md-12'>
     <h3><%= @facility.name %>    <% if user_signed_in? %>
     <% if current_user.likes.find_by_facility_id(@facility) %>
-      <%= button_to 'Liked', facility_likes_path(@facility), disabled: true, class: 'btn btn-primary' %>
+      <%= link_to 'Liked', facility_likes_path(@facility), disabled: true, method: :post, class: 'btn btn-primary' %>
     <% else %>
-      <%= button_to 'Like', facility_likes_path(@facility), class: 'btn btn-primary' %>
+      <%= link_to 'Like', facility_likes_path(@facility), method: :post, class: 'btn btn-primary' %>
     <% end %>
     <% end %></h3>
   </div>
