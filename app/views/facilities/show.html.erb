@@ -1,45 +1,8 @@
-<div class='row fac-title'>
-  <div class='col-md-12'>
-    <h3><%= @facility.name %>    <% if user_signed_in? %>
-    <% if current_user.likes.find_by_facility_id(@facility) %>
-      <%= link_to 'Liked', facility_likes_path(@facility), disabled: true, method: :post, class: 'btn btn-primary' %>
-    <% else %>
-      <%= link_to 'Like', facility_likes_path(@facility), method: :post, class: 'btn btn-primary' %>
-    <% end %>
-    <% end %></h3>
-  </div>
-</div>
-<div class='row fac-info'>
-  <div class='col-md-2'>
-    <img class="display_images" src=<%= @facility.img_url %>>
-  </div>
-  <div class='col-md-10 fac-data'>
-    <% if @facility.formatted_address != nil %>
-    Address: <%= @facility.formatted_address %>
-    <br>
-    <% end %>
-    <% if @facility.formatted_phone_number != 0 %>
-    Phone: <%= @facility.formatted_phone_number %>
-    <br>
-    <% end %>
-    <% if @facility.rating != nil %>
-    Rating: <%= @facility.rating %>
-    <br>
-    <% end %>
-    <% if @facility.website != nil %>
-    Website: <a href = <%= @facility.website %>><%= @facility.website %></a>
-    <% end %>
-  </div>
-</div>
+<%= render 'layouts/facility_title' %>
 
 <table class="table table-hover">
   <thead>
-  <div class='col-md-8'>
-    <h3>Reviews</h3>
-  </div>
-  <div class='col-md-4'>
-    <%= link_to 'Add a Review', new_facility_review_path(@facility), id: 'add_review', class: 'btn btn-primary pull-right' %>
-  </div>
+    <h3>Reviews <%= link_to 'New Review', new_facility_review_path(@facility), id: 'add_review', class: 'btn btn-warning', style: "margin-left: 30px;" %></h3>
   </thead>
   <tbody>
     <% @facility.reviews.sort_by(&:score).reverse.each do |review| %>
@@ -51,18 +14,18 @@
       Score (<%= review.score %>)
       </small>
       </td>
-      <td class="col-md-9"> <%= review.body %>
+      <td class="col-md-7"> <%= review.body %>
       </td>
-      <td class="col-md-2">
+      <td class="col-md-1">
+      </td>
+      <td class="col-md-3">
           <% if user_signed_in? %>
           <% if current_user.id == review.user_id %>
-          <div class="btn-group">
-          <%= button_to 'Edit', edit_facility_review_path(review, facility_id: @facility.id), method: :get, class: 'btn btn-primary btn-sm' %>
-          <%= button_to 'Delete', facility_review_path(review, facility_id: @facility.id), method: :delete, class: 'btn btn-danger btn-sm', data: {confirm: 'Are you sure?'} %>
-          </div>
+          <%= link_to 'Edit', edit_facility_review_path(review, facility_id: @facility.id), method: :get, class: 'btn btn-primary' %>
+          <%= link_to 'Delete', facility_review_path(review, facility_id: @facility.id), method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
           <% else %>
-          <%= button_to 'Useful', review_votes_path(review, is_up: true), class: 'btn btn-success btn-sm' %>
-          <%= button_to 'Not Useful', review_votes_path(review, is_up: false), class: 'btn btn-danger btn-sm' %>
+          <%= link_to 'Useful', review_votes_path(review, is_up: true), method: :post, class: 'btn btn-success' %>
+          <%= link_to 'Not Useful', review_votes_path(review, is_up: false), method: :post, class: 'btn btn-danger' %>
           <% end %>
           <% end %>
       </td>

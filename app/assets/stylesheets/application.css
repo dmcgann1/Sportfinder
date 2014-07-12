@@ -22,7 +22,7 @@
   padding-top: 100px;
   }
 
- .navbar {
+.navbar {
   background-color: rgba(0,0,0,0.55);
   border-color: rgba(0,0,0,0.55);
   color: black;
@@ -76,7 +76,7 @@ h1 {
 }
 
 .fac-title .btn {
-  margin-top: 15px;
+  margin-left: 20px;
 }
 
 .fac-info {
@@ -127,4 +127,12 @@ h1 {
  .fa-user {
   color: white;
  }
+
+thead h3 .btn {
+  margin-left: 50px;
+}
+
+.rev {
+  margin-top: 20px;
+}
 

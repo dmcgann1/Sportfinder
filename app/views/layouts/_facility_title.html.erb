@@ -1,0 +1,33 @@
+<div class='row fac-title'>
+  <div class='col-md-12'>
+    <h3><%= @facility.name %>    <% if user_signed_in? %>
+    <% if current_user.likes.find_by_facility_id(@facility) %>
+      <%= link_to 'Liked', facility_likes_path(@facility), disabled: true, method: :post, class: 'btn btn-primary' %>
+    <% else %>
+      <%= link_to 'Like', facility_likes_path(@facility), method: :post, class: 'btn btn-primary' %>
+    <% end %>
+    <% end %></h3>
+  </div>
+</div>
+<div class='row fac-info'>
+  <div class='col-md-2'>
+    <img class="display_images" src=<%= @facility.img_url %>>
+  </div>
+  <div class='col-md-10 fac-data'>
+    <% if @facility.formatted_address != nil %>
+    Address: <%= @facility.formatted_address %>
+    <br>
+    <% end %>
+    <% if @facility.formatted_phone_number != 0 %>
+    Phone: <%= @facility.formatted_phone_number %>
+    <br>
+    <% end %>
+    <% if @facility.rating != nil %>
+    Rating: <%= @facility.rating %>
+    <br>
+    <% end %>
+    <% if @facility.website != nil %>
+    Website: <a href = <%= @facility.website %>><%= @facility.website %></a>
+    <% end %>
+  </div>
+</div>
