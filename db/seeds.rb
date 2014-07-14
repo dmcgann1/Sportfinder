@@ -1,8 +1,5 @@
 User.delete_all
-Facility.delete_all
-Like.delete_all
-Review.delete_all
-Vote.delete_all
+
 
 diarmuid = User.new
 diarmuid.email = 'dmcgann1@gmail.com'
