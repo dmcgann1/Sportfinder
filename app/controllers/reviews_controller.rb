@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to facility_display_path(params[:facility_id])
     else
-      flash.now[:alert] = @review.errors.full_messages.join(', ')
+      flash[:alert] = @review.errors.full_messages.join(', ')
       redirect_to facility_display_path(params[:facility_id])
     end
   end
@@ -51,5 +51,4 @@ class ReviewsController < ApplicationController
   def set_facility
     @facility = Facility.find(params[:facility_id])
   end
-
 end
