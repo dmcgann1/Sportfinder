@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :facilities, only: [:index]
   root 'home#show'
 
-  post '/facilities/search' => 'facilities#search'
-  post '/facilities' => 'facilities#show', as: :facility
+  resources :facilities, only: [:show]
 
-  #get '/facilities/:id/reviews/new' => 'reviews#new', as: :reviews_new
   resources :facilities, only: [] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
   end
-
-  get '/facilities/:facility_id' => 'facilities#show', as: :facility_display
 
   resources :reviews, only: [] do
     resources :votes, only: [:create]
@@ -23,4 +18,7 @@ Rails.application.routes.draw do
   end
 
   get '/favourites' => 'facilities#favourites', as: :favourites
+
+  #Would like to try refactor this as Alex said it should be a get not post
+  post '/facilities/search' => 'facilities#search'
 end

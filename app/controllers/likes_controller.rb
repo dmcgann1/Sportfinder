@@ -8,6 +8,6 @@ class LikesController < ApplicationController
     @like.save!
 
     #need to redirect this back to page
-    redirect_to facility_display_path(@facility)
+    redirect_to facility_path(@facility)
   end
 end

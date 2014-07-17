@@ -13,6 +13,6 @@ class VotesController < ApplicationController
 
     @vote.save!
     #need to fix this redirect
-    redirect_to facility_display_path(@review.facility_id)
+    redirect_to facility_path(@review.facility_id)
   end
 end

@@ -7,7 +7,7 @@
     <% @facilities.each do |facility| %>
       <tr>
       <td>
-      <h3><%= counter %> <%= link_to facility.name, facility_display_path(facility) %></h3>
+      <h3><%= counter %> <%= link_to facility.name, facility_path(facility) %></h3>
       <img class="search_images" src=<%= facility.img_url %>>
       <br>
       <% if facility.formatted_address != nil %>
