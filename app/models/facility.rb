@@ -4,245 +4,245 @@ class Facility < ActiveRecord::Base
   has_many :likes
 
   FILTER_VALUES =
-%w(Abseiling
-Acro
-Adi Murai
-Adventure racing
-Adventure Sports
-Aerobatics
-Aeromodeling
-AFL
-Aggressive inline skating
-Aikido
-Aiki-j_jutsu
-Air Hockey
-Air Racing
-Air sports
-Airsoft
-All-Terrain Boarding
-Alpine Skiing
-American Football
-American Handball
-Angling
-Aquathlon
-Archery
-Arena Football.
-Arm Wrestling
-Artistic Billiards
-Artistic Cycling
-Artistic Gymnastics
-Artistic Pool
-Artistic Roller Skating
-Association Football
-Athletics
-Atlatl
-ATV
-Aussie Rules
-Australian Rules Football
-Australian Handball
-Austus
-Auto Racing
-Autocross
-Autograss
-Ba game
-Backgammon
-Backpacking (wilderness)
-Backstroke
-Badminton
-Bagatelle
-Baguazhang
-Balance Beam
-Balkline and straight rail
-Ball
-Ball badminton
-Ball hockey
-Ballooning
-Ballroom Dancing
-Bando
-Bandy
-Banger racing
-Bank pool
-Banzai skydiving
-Bar billiards
-Bare-knuckle boxing
-Barrel Racing
-Bartitsu
-BASE jumping
-Baseball
-Baseball - four bases
-Baseball pocket billiards
-Basketball
-Basque Pelota
-Bat-and-Trap
-Batt_jutsu
-Beach basketball
-Beach handball
-Beach rugby
-Beach soccer
-Beach volleyball
-Beagling
-Benchpress
-Benchrest shooting
-Biathlon
-Bicycle Motocross or BMX
-Bicycle polo
-Big game hunting
-Big-game fishing
-Biribol
-Blackball
-Board track racing
-Boardercross
-Bobrun cycling
-Bobrun skating
-Bobsleigh
-Bocce
-Boccia
-Body Building
-Bodyboarding
-Bodybuilding
-bodypump
-Boffer Fighting
-Bokator
-Bossaball
-Boßeln
-Bottle pool
-Bouldering
-Boule lyonnaise
-Bounceball
-Bowling
-Bowling (Tenpin)
-Bowlliards
-Bowls
-Box lacrosse
-Boxing
-Brännboll - four bases
-Brazilian Jiu-Jitsu
-Breaststroke
-British baseball - four posts
-British bulldogs (American Eagle)
-Broomball
-Bujinkan
-Bull Fighting
-Bull riding
-Bumper pool
-Bungee jumping
-Bunnock
-Bushwhacking
-Butterfly stroke
-Butts Up
-Buzkashi
-Caid
-Calcio Fiorentino
-Calva
-Camel racing
-Cammag
-Camogie
-Campdrafting
-Camping (game)
-Canadian football
-Candlepin bowling
-Canoe Polo
-Canoeing
-Canyoning (Canyoneering)
-Capoeira
-Capture the flag
-Carom billiards
-Casterboarding
-Casting
-Catch wrestling
-Charreada
-Checkers
-Cheerleading
-Chess
-Chessboxing
-Chester-le-Street
-Chicago
-Chilean rodeo
-Chinese Checkers
-Chinese handball
-Chinlone
-Choi Kwang-Do
-Clay pigeon shooting
-Clean and jerk
-Clout archery
-Club
-Cluster ballooning
-Cnapan
-Coastal and ocean rowing
-Color guard (flag spinning)
-Color Guard, or Flag Spinning
-Combat robot
-Combine racing
-Combined training
-Competitive eating
-Competitive Marching Band
-Composite rules shinty-hurling
-Connect Four
-Contesting
-Corkball - four bases (no base-running)
-Cornish hurling
-Cowboy
-Cowboy Action Shooting
-Cowboy polo
-Crab soccer
-Crazy Golf
-Creeking
-Cribbage (pool)
-Cricket
-Cricket - two wickets
-Croquet
-Cross country skiing
-Cross-country mountain biking
-Cross-country rally
-Cross-country running
-Cross-country skiing
-Crossfit
-Cubbies
-Cue sports
-Cuju
-Curby
-Curling
-Cushion caroms
-Cutthroat
-Cycling
-Cyclo-cross
-Czech handball
-Dancesport
-Danish longball
-Darts
-Deadlifting
-Deaf basketball
-Debating
-Decathlon
-Deer hunting
-Demolition derby
-Desert racing
-Dinghy sailing
-Diplomacy
-Dirt jumping
-Dirt track racing
-Disc dog
-Disc golf
-Disc Sports
-Discus
-Diving
-Dodge disc
-Dodgeball
-Dog Racing
-Dog Sledding
-Dog sports
-Dominoes
-Double disc court
-Down Hill Skiing
-Downhill mountain biking
-Drag boat racing
-Drag racing
-Dragon boat racing
-Draughts
-Draughts (aka checkers)
-Dressage
-Drifting
-Drunken Boxing (or Drunkard's Boxing)
+  %w(Abseiling
+     Acro
+     Adi Murai
+     Adventure racing
+     Adventure Sports
+     Aerobatics
+     Aeromodeling
+     AFL
+     Aggressive inline skating
+     Aikido
+     Aiki-j_jutsu
+     Air Hockey
+     Air Racing
+     Air sports
+     Airsoft
+     All-Terrain Boarding
+     Alpine Skiing
+     American Football
+     American Handball
+     Angling
+     Aquathlon
+     Archery
+     Arena Football.
+     Arm Wrestling
+     Artistic Billiards
+     Artistic Cycling
+     Artistic Gymnastics
+     Artistic Pool
+     Artistic Roller Skating
+     Association Football
+     Athletics
+     Atlatl
+     ATV
+     Aussie Rules
+     Australian Rules Football
+     Australian Handball
+     Austus
+     Auto Racing
+     Autocross
+     Autograss
+     Ba game
+     Backgammon
+     Backpacking (wilderness)
+     Backstroke
+     Badminton
+     Bagatelle
+     Baguazhang
+     Balance Beam
+     Balkline and straight rail
+     Ball
+     Ball badminton
+     Ball hockey
+     Ballooning
+     Ballroom Dancing
+     Bando
+     Bandy
+     Banger racing
+     Bank pool
+     Banzai skydiving
+     Bar billiards
+     Bare-knuckle boxing
+     Barrel Racing
+     Bartitsu
+     BASE jumping
+     Baseball
+     Baseball - four bases
+     Baseball pocket billiards
+     Basketball
+     Basque Pelota
+     Bat-and-Trap
+     Batt_jutsu
+     Beach basketball
+     Beach handball
+     Beach rugby
+     Beach soccer
+     Beach volleyball
+     Beagling
+     Benchpress
+     Benchrest shooting
+     Biathlon
+     Bicycle Motocross or BMX
+     Bicycle polo
+     Big game hunting
+     Big-game fishing
+     Biribol
+     Blackball
+     Board track racing
+     Boardercross
+     Bobrun cycling
+     Bobrun skating
+     Bobsleigh
+     Bocce
+     Boccia
+     Body Building
+     Bodyboarding
+     Bodybuilding
+     bodypump
+     Boffer Fighting
+     Bokator
+     Bossaball
+     Boßeln
+     Bottle pool
+     Bouldering
+     Boule lyonnaise
+     Bounceball
+     Bowling
+     Bowling (Tenpin)
+     Bowlliards
+     Bowls
+     Box lacrosse
+     Boxing
+     Brännboll - four bases
+     Brazilian Jiu-Jitsu
+     Breaststroke
+     British baseball - four posts
+     British bulldogs (American Eagle)
+     Broomball
+     Bujinkan
+     Bull Fighting
+     Bull riding
+     Bumper pool
+     Bungee jumping
+     Bunnock
+     Bushwhacking
+     Butterfly stroke
+     Butts Up
+     Buzkashi
+     Caid
+     Calcio Fiorentino
+     Calva
+     Camel racing
+     Cammag
+     Camogie
+     Campdrafting
+     Camping (game)
+     Canadian football
+     Candlepin bowling
+     Canoe Polo
+     Canoeing
+     Canyoning (Canyoneering)
+     Capoeira
+     Capture the flag
+     Carom billiards
+     Casterboarding
+     Casting
+     Catch wrestling
+     Charreada
+     Checkers
+     Cheerleading
+     Chess
+     Chessboxing
+     Chester-le-Street
+     Chicago
+     Chilean rodeo
+     Chinese Checkers
+     Chinese handball
+     Chinlone
+     Choi Kwang-Do
+     Clay pigeon shooting
+     Clean and jerk
+     Clout archery
+     Club
+     Cluster ballooning
+     Cnapan
+     Coastal and ocean rowing
+     Color guard (flag spinning)
+     Color Guard, or Flag Spinning
+     Combat robot
+     Combine racing
+     Combined training
+     Competitive eating
+     Competitive Marching Band
+     Composite rules shinty-hurling
+     Connect Four
+     Contesting
+     Corkball - four bases (no base-running)
+     Cornish hurling
+     Cowboy
+     Cowboy Action Shooting
+     Cowboy polo
+     Crab soccer
+     Crazy Golf
+     Creeking
+     Cribbage (pool)
+     Cricket
+     Cricket - two wickets
+     Croquet
+     Cross country skiing
+     Cross-country mountain biking
+     Cross-country rally
+     Cross-country running
+     Cross-country skiing
+     Crossfit
+     Cubbies
+     Cue sports
+     Cuju
+     Curby
+     Curling
+     Cushion caroms
+     Cutthroat
+     Cycling
+     Cyclo-cross
+     Czech handball
+     Dancesport
+     Danish longball
+     Darts
+     Deadlifting
+     Deaf basketball
+     Debating
+     Decathlon
+     Deer hunting
+     Demolition derby
+     Desert racing
+     Dinghy sailing
+     Diplomacy
+     Dirt jumping
+     Dirt track racing
+     Disc dog
+     Disc golf
+     Disc Sports
+     Discus
+     Diving
+     Dodge disc
+     Dodgeball
+     Dog Racing
+     Dog Sledding
+     Dog sports
+     Dominoes
+     Double disc court
+     Down Hill Skiing
+     Downhill mountain biking
+     Drag boat racing
+     Drag racing
+     Dragon boat racing
+     Draughts
+     Draughts (aka checkers)
+     Dressage
+     Drifting
+     Drunken Boxing (or Drunkard's Boxing)
 Duathlon
 Duckpin bowling
 Dumog
@@ -977,44 +977,44 @@ Wireball
 Woggabaliri
 Wolf hunting
 Women's lacrosse
-Wood Chopping
-Wrestling
-Wushu
-Xare
-Xingyiquan
-Ya_lı Güre_
-Yak polo
-Yoga
-Yubi lakpi
-Yukigassen
-Zourkhaneh
-Zui Quan)
+                     Wood Chopping
+                     Wrestling
+                     Wushu
+                     Xare
+                     Xingyiquan
+                     Ya_lı Güre_
+                     Yak polo
+                     Yoga
+                     Yubi lakpi
+                     Yukigassen
+                     Zourkhaneh
+                     Zui Quan)
 
-  def self.google_create(object)
-  f = Facility.create!(
-    name: object.name,
-    formatted_phone_number: object.formatted_phone_number,
-    formatted_address: object.formatted_address,
-    rating: object.rating,
-    website: object.website,
-    identifier: object.id
-  )
+     def self.google_create(object)
+       f = Facility.create!(
+         name: object.name,
+         formatted_phone_number: object.formatted_phone_number,
+         formatted_address: object.formatted_address,
+         rating: object.rating,
+         website: object.website,
+         identifier: object.id
+       )
 
-  photo = object.photos[0]
-  if photo
-    f.update(img_url: photo.fetch_url(800))
-    f.save!
-  else
-    f.update(img_url: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w")
-    f.save!
-  end
+       photo = object.photos[0]
+       if photo
+         f.update(img_url: photo.fetch_url(800))
+         f.save!
+       else
+         f.update(img_url: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w")
+         f.save!
+       end
 
-    return f
-  end
+       return f
+     end
 
-  def self.filter_search(param)
-    param.split.any?{ |word| FILTER_VALUES.include?(word) }
-  end
+     def self.filter_search(param)
+       param.split.any?{ |word| FILTER_VALUES.include?(word) }
+     end
 
 
-end
+     end

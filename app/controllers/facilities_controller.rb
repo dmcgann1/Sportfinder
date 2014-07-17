@@ -1,16 +1,5 @@
 class FacilitiesController < ApplicationController
 
-  def show
-    @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
-    if Facility.where(identifier: params[:identifier]).exists?
-      @facility = Facility.find_by_identifier(params[:identifier])
-    elsif Facility.where(id: params[:id]).exists?
-      @facility = Facility.find(params[:id])
-    else
-      @facility = Facility.google_create(@client.spot(params[:reference]))
-    end
-  end
-
   def search
     @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
     if params[:sport_type].present? && params[:area].present?
@@ -28,8 +17,20 @@ class FacilitiesController < ApplicationController
     end
   end
 
+  def show
+    @client = GooglePlaces::Client.new(ENV['GPLACES_TOKEN'])
+    if Facility.where(identifier: params[:identifier]).exists?
+      @facility = Facility.find_by_identifier(params[:identifier])
+    elsif Facility.where(id: params[:id]).exists?
+      @facility = Facility.find(params[:id])
+    else
+      @facility = Facility.google_create(@client.spot(params[:reference]))
+    end
+  end
+
   def favourites
     authenticate_user!
     @facilities = Facility.find(current_user.likes.map(&:facility_id).each {|i| i})
   end
+
 end
