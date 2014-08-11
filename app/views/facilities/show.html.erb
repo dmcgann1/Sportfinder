@@ -5,7 +5,7 @@
     <h3>Reviews <%= link_to 'New Review', new_facility_review_path(@facility), id: 'add_review', class: 'btn btn-warning', style: "margin-left: 30px;" %></h3>
   </thead>
   <tbody>
-    <% @facility.reviews.sort_by(&:score).reverse.each do |review| %>
+    <% @reviews.sort_by(&:score).reverse.each do |review| %>
       <tr>
       <td class="col-md-1">
       <small>

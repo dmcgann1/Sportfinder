@@ -26,6 +26,7 @@ class FacilitiesController < ApplicationController
     else
       @facility = Facility.google_create(@client.spot(params[:reference]))
     end
+    @reviews = @facility.reviews.includes(:user)
   end
 
   def favourites
