@@ -41,6 +41,10 @@ gem 'rails_12factor', group: :production
 
 gem 'omniauth-facebook'
 
+gem "bullet", :group => "development"
+
+gem 'rack-mini-profiler'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
