@@ -5,7 +5,14 @@
   </div>
   <div class='col-md-6'>
 
-<h2>Sign in</h2>
+  <h2>Sign in</h2>
+  <br>
+
+  <%= button_to user_omniauth_authorize_path(:facebook), method: :get, class: 'btn btn-block btn-social btn-facebook' do %><i class="fa fa-facebook"></i>Log in with Facebook<% end %>
+  <br>
+  <br>
+  <h3>Or sign in through email</h3>
+  <br>
 
 <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= f.email_field :email, autofocus: true %>

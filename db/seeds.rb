@@ -2,7 +2,7 @@ User.delete_all
 
 
 diarmuid = User.new
-diarmuid.email = 'dmcgann1@gmail.com'
+diarmuid.email = 'diarmuid@example.com'
 diarmuid.password = 'password'
 diarmuid.encrypted_password = '$2a$10$y2uSEcU4UNuwa.Jvr1bkyOrMnykpWYxDnIdAfmaqbLrRkgaDoyk1S'
 diarmuid.save!
