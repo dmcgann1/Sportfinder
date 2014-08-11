@@ -7,6 +7,6 @@ class Review < ActiveRecord::Base
   validates :body, presence: true
 
   def score
-    score = votes.where(is_up: true).count - votes.where(is_up: false).count
+    score = votes.where(is_up: true).size - votes.where(is_up: false).size
   end
 end
