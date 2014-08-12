@@ -3,18 +3,13 @@ Rails.application.routes.draw do
 
   root 'home#show'
 
-  resources :facilities, only: [:show]
-
-  resources :facilities, only: [] do
+  resources :facilities, only: [:show] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
+    resources :likes, only: [:create]
   end
 
   resources :reviews, only: [] do
     resources :votes, only: [:create]
-  end
-
-  resources :facilities, only: [] do
-    resources :likes, only: [:create]
   end
 
   get '/favourites' => 'facilities#favourites', as: :favourites
