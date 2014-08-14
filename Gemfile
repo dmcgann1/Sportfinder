@@ -45,6 +45,8 @@ gem "bullet", :group => "development"
 
 gem 'rack-mini-profiler'
 
+gem 'fb_graph'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
