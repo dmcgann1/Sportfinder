@@ -15,19 +15,19 @@
   </div>
   <div class='col-md-10 fac-data'>
     <% if @facility.formatted_address != nil %>
-    Address: <%= @facility.formatted_address %>
-    <br>
+      Address: <%= @facility.formatted_address %>
+      <br>
     <% end %>
     <% if @facility.formatted_phone_number != 0 %>
-    Phone: <%= @facility.formatted_phone_number %>
-    <br>
+      Phone: <%= @facility.formatted_phone_number %>
+      <br>
     <% end %>
     <% if @facility.rating != nil %>
-    Rating: <%= @facility.rating %>
-    <br>
+      Rating: <%= @facility.rating %>
+      <br>
     <% end %>
     <% if @facility.website != nil %>
-    Website: <a href = <%= @facility.website %>><%= @facility.website %></a>
+      Website: <a href = <%= @facility.website %>><%= @facility.website %></a>
     <% end %>
   </div>
 </div>
