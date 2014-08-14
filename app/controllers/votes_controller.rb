@@ -7,11 +7,11 @@ class VotesController < ApplicationController
       current_user.vote_for(@review).destroy
     end
 
-    @vote = current_user.votes.new
-    @vote.is_up = params[:is_up]
-    @vote.review_id = params[:review_id]
+    @vote = current_user.votes.create(
+      is_up: params[:is_up],
+      review_id: params[:review_id]
+      )
 
-    @vote.save!
     #need to fix this redirect
     redirect_to facility_path(@review.facility_id)
   end
