@@ -3,3 +3,15 @@
 <%= @user.name %>
 <br>
 <%= @user.email %>
+<br>
+<h3><%= @user.name %>'s Friends</h3>
+<% @user.friends.each do |friend| %>
+<!-- Should refactor this code as way too much logic for the view -->
+<% person = User.find_by(name: friend.name) %>
+<img src="<%=person.image %>">
+<br>
+<%= person.name %>
+<br>
+<%= person.email %>
+<br>
+<% end %>
