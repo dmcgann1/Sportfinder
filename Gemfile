@@ -45,7 +45,7 @@ gem "bullet", :group => "development"
 
 gem 'rack-mini-profiler'
 
-gem 'fb_graph'
+gem 'koala'
 
 
 # Use ActiveModel has_secure_password
