@@ -4,8 +4,8 @@ class FacilitiesController < ApplicationController
     if params[:sport_type].present? && params[:area].present?
       if Facility.filter_search(params[:sport_type].capitalize)
         #Make into string for google map search
-        @search = " #{params[:sport_type]} near #{params[:area]}"
-        @facilities = CLIENT.spots_by_query(@search)
+        search = " #{params[:sport_type]} near #{params[:area]}"
+        @facilities = CLIENT.spots_by_query(search)
       else
         flash[:alert] = "Sorry we don't have any information for that sport"
         redirect_to root_path

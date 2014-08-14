@@ -18,13 +18,11 @@ class Facility < ActiveRecord::Base
 
     if photo
       f.update(img_url: photo.fetch_url(800))
-      f.save!
     else
       f.update(img_url: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w")
-      f.save!
     end
 
-    return f
+    f
   end
 
 
@@ -35,13 +33,12 @@ class Facility < ActiveRecord::Base
 
   def self.identify_facility(identifier, id, reference)
     if self.where(identifier: identifier).exists?
-      return self.find_by_identifier(identifier)
+      self.find_by_identifier(identifier)
     elsif self.where(id: id).exists?
-      return self.find(id)
+      self.find(id)
     else
-      return self.google_create(CLIENT.spot(reference))
+      self.google_create(CLIENT.spot(reference))
     end
   end
-
 
 end
