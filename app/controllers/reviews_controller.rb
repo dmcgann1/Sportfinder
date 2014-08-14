@@ -12,13 +12,13 @@ class ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.new(review_params)
-    @review.facility_id = params[:facility_id]
+    @review.facility = @facility
 
     if @review.save
-      redirect_to facility_path(params[:facility_id])
+      redirect_to @facility
     else
-      flash[:alert] = @review.errors.full_messages.join(', ')
-      redirect_to facility_path(params[:facility_id])
+      flash.now[:alert] = @review.errors.full_messages.join(', ')
+      render :new
     end
   end
 
@@ -29,7 +29,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to facility_path(params[:facility_id])
+      redirect_to @facility
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     @review.destroy
-    redirect_to facility_path(params[:facility_id])
+    redirect_to @facility
   end
 
   private
