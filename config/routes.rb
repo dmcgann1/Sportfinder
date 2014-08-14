@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   root 'home#show'
 
+  resources :users, only: [:show]
+
   resources :facilities, only: [:show] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
     resources :likes, only: [:create]

@@ -21,6 +21,15 @@ class User < ActiveRecord::Base
       user.image = auth.info.image
       user.access_token = auth.credentials.token
       user.save!
+      user.add_friends
+    end
+  end
+
+  def add_friends
+    graph = Koala::Facebook::API.new(access_token)
+
+    graph.get_connection("me", "friends").each do |hash|
+      self.friends.where(name: hash['name'], uid: hash['uid']).first_or_create
     end
   end
 end
