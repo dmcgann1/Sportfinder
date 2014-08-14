@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
     graph = Koala::Facebook::API.new(access_token)
 
     graph.get_connection("me", "friends").each do |hash|
-      self.friends.where(name: hash['name'], uid: hash['uid']).first_or_create
+      self.friends.where(name: hash['name'], uid: hash['id']).first_or_create
     end
   end
 end
