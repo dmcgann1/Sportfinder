@@ -19,4 +19,19 @@ Current Location: <%= @user.location %>
 <br>
 <% end %>
 <br>
+<h3>All Sports</h3>
+<ul>
+  <% @sports.each do |sport| %>
+    <li><%= link_to sport.name, user_sports_path(sport_id: sport), method: :post %></li>
+  <% end %>
+</ul>
+<br>
+<h3>My Favourite Sports</h3>
+<ul>
+  <% @user.sports.each do |sport| %>
+    <li><%= sport.name %></li>
+  <% end %>
+</ul>
+
+<br>
 <h3>My Bookings</h3>

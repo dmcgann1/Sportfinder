@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :friendships
   has_many :friends, through: :friendships
+  has_many :user_sports
+  has_many :sports, through: :user_sports
+
 
   def vote_for(review)
     review.votes.find_by(user_id: id)

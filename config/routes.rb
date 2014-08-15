@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :votes, only: [:create]
   end
 
+  resources :user_sports, only: [:create]
+
   get '/favourites' => 'facilities#favourites', as: :favourites
 
   #Would like to try refactor this as Alex said it should be a get not post
