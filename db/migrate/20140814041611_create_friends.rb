@@ -1,9 +1,8 @@
 class CreateFriends < ActiveRecord::Migration
   def change
-    create_table :friends do |t|
-      t.string :uid
-      t.string :name
-      t.references :user, index: true
+    create_table :friendships do |t|
+      t.integer :user_id
+      t.integer :friend_id
     end
   end
 end

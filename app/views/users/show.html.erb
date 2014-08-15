@@ -1,17 +1,19 @@
 <img src="<%=@user.image %>">
 <br>
-<%= @user.name %>
+Name: <%= @user.name %>
 <br>
-<%= @user.email %>
+Email: <%= @user.email %>
+<br>
+Hometown: <%= @user.hometown %>
+<br>
+Current Location: <%= @user.location %>
 <br>
 <h3><%= @user.name %>'s Friends</h3>
 <% @user.friends.each do |friend| %>
-<!-- Should refactor this code as way too much logic for the view -->
-<% person = User.find_by(name: friend.name) %>
-<img src="<%=person.image %>">
+<img src="<%=friend.image %>">
 <br>
-<%= person.name %>
+<%= friend.name %>
 <br>
-<%= person.email %>
+<%= friend.email %>
 <br>
 <% end %>

@@ -28,13 +28,10 @@ ActiveRecord::Schema.define(version: 20140814041611) do
     t.string  "identifier"
   end
 
-  create_table "friends", force: true do |t|
-    t.string  "uid"
-    t.string  "name"
+  create_table "friendships", force: true do |t|
     t.integer "user_id"
+    t.integer "friend_id"
   end
-
-  add_index "friends", ["user_id"], name: "index_friends_on_user_id", using: :btree
 
   create_table "likes", force: true do |t|
     t.integer "facility_id"
@@ -58,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140814041611) do
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
+    t.string   "email",                  default: ""
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -75,6 +72,8 @@ ActiveRecord::Schema.define(version: 20140814041611) do
     t.string   "name"
     t.text     "image"
     t.string   "access_token"
+    t.string   "hometown"
+    t.string   "location"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
