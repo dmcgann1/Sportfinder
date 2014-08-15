@@ -3,6 +3,7 @@ class Facility < ActiveRecord::Base
 
   has_many :reviews
   has_many :likes
+  has_many :bookings
 
   def self.google_create(object)
     f = Facility.create!(

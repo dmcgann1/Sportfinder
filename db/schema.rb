@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815191231) do
+ActiveRecord::Schema.define(version: 20140815204421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: true do |t|
+    t.integer "facility_id"
+    t.integer "sport_id"
+    t.time    "time"
+  end
+
+  add_index "bookings", ["facility_id"], name: "index_bookings_on_facility_id", using: :btree
+  add_index "bookings", ["sport_id"], name: "index_bookings_on_sport_id", using: :btree
 
   create_table "facilities", force: true do |t|
     t.text    "name"
@@ -57,6 +66,14 @@ ActiveRecord::Schema.define(version: 20140815191231) do
   create_table "sports", force: true do |t|
     t.string "name"
   end
+
+  create_table "user_bookings", force: true do |t|
+    t.integer "user_id"
+    t.integer "booking_id"
+  end
+
+  add_index "user_bookings", ["booking_id"], name: "index_user_bookings_on_booking_id", using: :btree
+  add_index "user_bookings", ["user_id"], name: "index_user_bookings_on_user_id", using: :btree
 
   create_table "user_sports", force: true do |t|
     t.integer "user_id"

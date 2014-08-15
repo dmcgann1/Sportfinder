@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   has_many :friends, through: :friendships
   has_many :user_sports
   has_many :sports, through: :user_sports
+  has_many :user_bookings
+  has_many :bookings, through: :user_bookings
 
 
   def vote_for(review)
