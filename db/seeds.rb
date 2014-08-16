@@ -1,4 +1,9 @@
 # User.delete_all
+Sport.delete_all
+Booking.delete_all
+# Specify this as the dependent destroy is only triggered when I destroy the object not directly in the database with delete
+# For development purposes only
+UserBooking.delete_all
 
 
 # diarmuid = User.new
@@ -31,12 +36,12 @@
 # patsy.encrypted_password = '$2a$10$ZF5sKJxwhVfdYamn7FgPN..RIMNqL5de3pdJ6KXfJfVBN0cYVtriy'
 # patsy.save!
 
-tennis = Sport.create!(name: 'tennis')
-golf = Sport.create!(name: 'golf')
-soccer = Sport.create!(name: 'soccer')
-rugby = Sport.create!(name: 'rugby')
-basketball = Sport.create!(name: 'basketball')
-cycling = Sport.create!(name: 'cycling')
+tennis = Sport.create!(name: 'Tennis')
+golf = Sport.create!(name: 'Golf')
+soccer = Sport.create!(name: 'Soccer')
+rugby = Sport.create!(name: 'Rugby')
+basketball = Sport.create!(name: 'Basketball')
+cycling = Sport.create!(name: 'Cycling')
 
 
 
