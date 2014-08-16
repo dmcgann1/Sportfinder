@@ -1,0 +1,17 @@
+<%= form_for @booking do |f| %>
+  <%= f.label "Pick a Sport" %>
+  <%= f.collection_select(:sport_id, Sport.all, :id, :name) %>
+  <br>
+  <%= f.label "Pick a facility" %>
+  <%= f.collection_select(:facility_id, Facility.all, :id, :name) %>
+  <br>
+  <%= f.label "Pick a time" %>
+  <%= f.time_field(:time) %>
+  <br>
+  <%= f.fields_for :user_bookings, @booking.user_bookings.new do |a| %>
+  <%= a.label "Choose User" %>
+  <%= a.collection_select(:user_id, User.all, :id, :name) %>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>

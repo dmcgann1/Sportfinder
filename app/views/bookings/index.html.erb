@@ -1,0 +1,15 @@
+<h3>Activity Feed</h3>
+
+<% @bookings.each do |booking| %>
+  <% booking.users.each do |user| %>
+    <%= user.name %>
+  <% end %>
+   are playing
+  <%= booking.sport.name %>
+  @
+  <%= booking.facility.name %>
+  at
+  <%= booking.time %>
+  <br>
+  <br>
+<% end %>

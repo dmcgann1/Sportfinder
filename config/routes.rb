@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#show'
 
   resources :users, only: [:show]
+  resources :bookings, only: [:index, :new, :create]
 
   resources :facilities, only: [:show] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]

@@ -38,9 +38,6 @@ rugby = Sport.create!(name: 'rugby')
 basketball = Sport.create!(name: 'basketball')
 cycling = Sport.create!(name: 'cycling')
 
-a = Booking.create(sport: tennis, time: Time.now)
-a.user_bookings.create(user_id: 1)
-a.user_bookings.create(user_id: 2)
 
 
 
