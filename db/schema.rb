@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20140815204421) do
   create_table "user_sports", force: true do |t|
     t.integer "user_id"
     t.integer "sport_id"
+    t.string  "skill_level"
+    t.string  "rating"
   end
 
   add_index "user_sports", ["sport_id"], name: "index_user_sports_on_sport_id", using: :btree

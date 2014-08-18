@@ -1,4 +1,4 @@
-<h3>My Profile</h3>
+<h3><%= @user.name %>'s Profile</h3>
 <br>
 <%= link_to "New Booking", new_booking_path, class: 'btn bth-default' %>
 <img src="<%=@user.image %>">
@@ -21,19 +21,11 @@ Current Location: <%= @user.location %>
 <br>
 <% end %>
 <br>
-<h3>All Sports</h3>
-<ul>
-  <% @sports.each do |sport| %>
-    <li><%= link_to sport.name, user_sports_path(sport_id: sport), method: :post %></li>
-  <% end %>
-</ul>
-<br>
-<h3>My Favourite Sports</h3>
+<h3><%= @user.name %>'s Favourite Sports</h3>
 <ul>
   <% @user.sports.each do |sport| %>
     <li><%= sport.name %></li>
   <% end %>
 </ul>
-
 <br>
-<h3>My Bookings</h3>
+<h3><%= @user.name %>'s Bookings</h3>

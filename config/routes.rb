@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#show'
 
+  resources :sports, only: [:index]
   resources :users, only: [:show]
   resources :bookings, only: [:index, :new, :create]
 

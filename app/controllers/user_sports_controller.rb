@@ -3,7 +3,7 @@ class UserSportsController < ApplicationController
     @user_sport = current_user.user_sports.create(sport_id: params[:sport_id])
     if @user_sport.save
       flash[:notice] = "Sport Liked!"
-      redirect_to root_url
+      redirect_to user_path(current_user)
     else
       flash[:error] = "Uh oh - mucho error"
       redirect_to root_url

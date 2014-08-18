@@ -1,0 +1,6 @@
+<h3>Select your favourite sports</h3>
+<ul>
+  <% @sports.each do |sport| %>
+    <li><%= link_to sport.name, user_sports_path(sport_id: sport), method: :post %></li>
+  <% end %>
+</ul>
