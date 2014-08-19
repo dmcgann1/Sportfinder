@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  # root 'home#show'
-  root 'main#index'
+  root 'home#show'
 
   resources :sports, only: [:index]
   resources :users, only: [:show]

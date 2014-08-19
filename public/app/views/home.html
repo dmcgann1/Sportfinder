@@ -1,0 +1,43 @@
+Testing out Angular
+
+<h2>Profile Page View</h2>
+<button type="button" class="btn btn-default">Default</button>
+<div class="row" ng-repeat="person in data.people">
+  <p>{{ person.name }}'s favourite sport is {{ person.sport}}</p>
+</div>
+
+
+<div class="row text-center">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <button type="button" class="btn btn-block btn-social btn-facebook btn-lg"><i class="fa fa-facebook"></i>Log in with Facebook</button>
+  </div>
+</div>
+<h1>Discover the sports world around you ....</h1>
+<div class='row'>
+  <div class='col-md-4'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2><span class="glyphicon glyphicon-search"><br>Search</span></h2>
+        <p>Use SportFinder's extensive database and user generated reviews to find the perfect facility for you.</p>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-4'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2><span class="glyphicon glyphicon-list-alt"><br>Review</span></h2>
+        <p>Help out your fellow athletes by posting reviews and ratings on the facilities you've used.</p>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-4'>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2><span class="glyphicon glyphicon-heart"><br>Favourite</span></h2>
+        <p>'Like' your favourite facilities and access these at a glance.</p>
+      </div>
+    </div>
+  </div>
+</div>

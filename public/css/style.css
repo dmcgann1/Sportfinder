@@ -1,0 +1,125 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+ body {
+  padding-top: 100px;
+  }
+
+.navbar {
+  background-color: rgba(0,0,0,0.55);
+  border-color: rgba(0,0,0,0.55);
+  color: black;
+}
+
+.navbar-default .navbar-brand {
+  font-size: 30px;
+  color: white;
+}
+
+.navbar-right .btn {
+  margin-right: 6px;
+  margin-top: 8px;
+}
+
+body {
+  background-image: url("http://www.consciousconnectionmagazine.com/wp-content/uploads/2013/05/yoga-alliance.jpg");
+  background-size: cover;
+}
+
+.search_images {
+  max-width: 120px;
+}
+
+.display_images {
+  max-width: 170px;
+}
+
+.btn-warning {
+  background-color: #f58220;
+  border-color: #d4670a;
+}
+
+h1 {
+  font-size: 48px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.panel-body {
+  text-align: center;
+}
+
+.panel-default {
+  margin-right: 24px;
+  margin-left: 24px;
+  margin-top: 30px;
+  background-color: rgba(255,255,255,0.9);
+  height: 185px;
+}
+
+.fac-title .btn {
+  margin-left: 20px;
+}
+
+.fac-info {
+  margin-top: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+}
+
+
+.button_to {
+  display: inline-block;
+  margin-left: 7px;
+  vertical-align: center;
+}
+
+.navbar-right .button_to {
+  margin-left: 0px;
+}
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+ .fa-user {
+  color: white;
+ }
+
+thead h3 .btn {
+  margin-left: 50px;
+}
+
+.rev {
+  margin-top: 20px;
+}
+
+.btn-facebook {
+  margin-top: 100px;
+  width: 350px;
+}
