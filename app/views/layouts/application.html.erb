@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="SportFinder">
 <head>
   <title>SportFinder</title>
   <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.2.1/bootstrap-social.css" rel="stylesheet">
+  <%= javascript_include_tag "application", controller_name %>
   <!-- Install Google analytics -->
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -15,14 +16,12 @@
 
   ga('create', 'UA-52804595-1', 'auto');
   ga('send', 'pageview');
-
   </script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
 
+  <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= @home_page ? 'homepage' : ''%>">
 <div class='container'>
 <%= render 'layouts/messages' %>
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -72,10 +71,9 @@
       </div>
     </div>
    </nav>
-  <body class="<%= @home_page ? 'homepage' : ''%>">
-
-<%= yield %>
-</body>
+  <div>
+    <%= yield %>
+  </div>
 </div>
 
 </body>

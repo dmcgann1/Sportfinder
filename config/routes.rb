@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  root 'home#show'
+  # root 'home#show'
+  root 'main#index'
 
   resources :sports, only: [:index]
   resources :users, only: [:show]
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   resources :user_sports, only: [:create]
 
   get '/favourites' => 'facilities#favourites', as: :favourites
-
+  get "main/index"
   #Would like to try refactor this as Alex said it should be a get not post
   post '/facilities/search' => 'facilities#search'
 end

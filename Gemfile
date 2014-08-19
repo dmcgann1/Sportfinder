@@ -33,6 +33,8 @@ gem 'rspec-rails', '~> 3.0.0'
 
 gem 'google_places'
 
+gem 'bootstrap-sass'
+
 gem 'bootstrap_form'
 
 gem 'pry-rails', group: :development
