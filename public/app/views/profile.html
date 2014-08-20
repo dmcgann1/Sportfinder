@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+<br>
+<h2>{{user.name}}'s Profile</h2>
+<br>
+<img src="{{user.image}}">
+<br>
+Name: {{user.name}}
+<br>
+Email: {{user.email}}
+<br>
+Hometown: {{user.hometown}}
+<br>
+Location: {{user.location}}
+<br>
+<br>
+<h2>{{user.name}}'s Friends</h2>
+<br>
+<div ng-repeat="friend in user.friends">
+<img src="{{friend.image}}">
+<br>
+Name: <a href="#/users/{{friend.id}}">{{friend.name}}</a>
+<br>
+Email: {{friend.email}}
+</div>
+<br>
+<br>
+<h2>{{user.name}}'s Bookings</h2>
+

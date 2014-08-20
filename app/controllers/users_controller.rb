@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  def default_serializer_options
+    {root: false}
+  end
+
   def show
     @user = User.find(params[:id])
-    # Sports is here only for testing reasons - will be moved once views are structured more thoroughly
-    @sports = Sport.all
+    render json: @user
   end
 end

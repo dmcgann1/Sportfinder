@@ -1,8 +1,7 @@
-.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
- body {
+.homepage {
   padding-top: 100px;
-  }
+}
 
 .navbar {
   background-color: rgba(0,0,0,0.55);
