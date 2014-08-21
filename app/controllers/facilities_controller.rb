@@ -23,6 +23,7 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.identify_facility(params[:identifier], params[:id], params[:reference])
     @reviews = @facility.reviews.includes(:user)
+    render json: @facility
   end
 
   def favourites

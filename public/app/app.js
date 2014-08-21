@@ -24,5 +24,9 @@ app.config(['$routeProvider', function($routeProvider){
     templateUrl: 'app/views/my_facilities.html',
     controller: 'MyFacilitiesController'
   })
+  .when('/facilities/:facilityId', {
+    templateUrl: 'app/views/facility.html',
+    controller: 'FacilityController'
+  })
   .otherwise( {redirectTo: '/'});
 }]);

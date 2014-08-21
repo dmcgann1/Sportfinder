@@ -1,0 +1,42 @@
+<div class='row fac-title'>
+  <div class='col-md-12'>
+    <h3>{{facility.name}}</h3>
+  </div>
+</div>
+<div class='row fac-info'>
+  <div class='col-md-2'>
+    <img class="display_images" src="{{facility.img_url}}">
+  </div>
+  <div class='col-md-10 fac-data'>
+      Address: {{facility.formatted_address}}
+      <br>
+      Phone: {{facility.formatted_phone_number}}
+      <br>
+      Rating: {{facility.rating}}
+      <br>
+      Website: <a href="{{facility.website}}">{{facility.website}}</a>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <h3>Reviews</h3>
+  </thead>
+  <tbody>
+      <tr ng-repeat="review in facility.reviews">
+      <td class="col-md-1">
+      <small>
+      {{review.user}}
+      <br>
+      Score ({{review.score}})
+      </small>
+      </td>
+      <td class="col-md-7"> {{review.body}}
+      </td>
+      <td class="col-md-1">
+      </td>
+      <td class="col-md-3">
+      </td>
+      </tr>
+  </tbody>
+</table>
