@@ -8,4 +8,9 @@
 <br>
 <br>
 <br>
-This is the activity feed
+<div ng-repeat="booking in bookings">
+  <div ng-repeat="user in booking.users">
+  {{user.name}} and
+  </div>
+  are playing {{booking.sport.name}} @ {{booking.facility.name}} at {{booking.time}}
+</div>

@@ -1,5 +1,9 @@
 class FacilitiesController < ApplicationController
 
+  def default_serializer_options
+    {root: false}
+  end
+
   def search
     if params[:sport_type].present? && params[:area].present?
       if Facility.filter_search(params[:sport_type].capitalize)
@@ -22,8 +26,9 @@ class FacilitiesController < ApplicationController
   end
 
   def favourites
-    authenticate_user!
+    # authenticate_user!
     @facilities = Facility.find(current_user.likes.map(&:facility_id).each {|i| i})
+    render json: @facilities
   end
 
 end

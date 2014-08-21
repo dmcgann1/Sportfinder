@@ -20,5 +20,9 @@ app.config(['$routeProvider', function($routeProvider){
     templateUrl: 'app/views/activity_feed.html',
     controller: 'ActivityFeedController'
   })
+  .when('/myfacilities', {
+    templateUrl: 'app/views/my_facilities.html',
+    controller: 'MyFacilitiesController'
+  })
   .otherwise( {redirectTo: '/'});
 }]);

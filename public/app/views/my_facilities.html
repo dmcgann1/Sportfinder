@@ -1,0 +1,21 @@
+<table class="table table-hover">
+  <thead>
+    <h3>My Facilities</h3>
+  </thead>
+  <tbody>
+      <tr ng-repeat="facility in facilities">
+      <td>
+      <h3>{{facility.id}} {{facility.name}}</h3>
+      <img class="search_images" src="{{facility.img_url}}">
+      <br>
+      Address: {{facility.address}}
+      <br>
+      Phone: {{facility.formatted_phone_number}}
+      <br>
+      Rating: {{facility.rating}}
+      <br>
+      Website: <a href="{{facility.website}}">{{facility.website}}</a>
+      </td>
+      </tr>
+  </tbody>
+</table>

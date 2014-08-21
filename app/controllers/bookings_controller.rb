@@ -1,4 +1,9 @@
 class BookingsController < ApplicationController
+
+  def default_serializer_options
+    {root: false}
+  end
+
   def index
     @bookings = Booking.all
     render json: @bookings
