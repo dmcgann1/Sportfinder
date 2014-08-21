@@ -28,7 +28,7 @@ class FacilitiesController < ApplicationController
   def favourites
     # authenticate_user!
     @facilities = Facility.find(current_user.likes.map(&:facility_id).each {|i| i})
-    render json: @facilities
+    render json: @facilities, each_serializer: FavouriteSerializer
   end
 
 end
