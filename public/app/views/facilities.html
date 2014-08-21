@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead>
+    <h3>Search Results</h3>
+  </thead>
+  <tbody>
+      <tr ng-repeat="facility in facilities">
+      <td>
+      <h3>{{facility.name}}</h3>
+        <img class="search_images" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w">
+      <br>
+      <br>
+      Address: {{facility.formatted_address}}
+      <br>
+      Phone: {{facility.formatted_phone_number}}
+      <br>
+      Rating: {{facility.rating}}
+      <br>
+      Website: <a href="{{facility.website}}">{{facility.website}}</a>
+      </td>
+      </tr>
+  </tbody>
+</table>

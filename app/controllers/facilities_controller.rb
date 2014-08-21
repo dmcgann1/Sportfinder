@@ -10,6 +10,7 @@ class FacilitiesController < ApplicationController
         #Make into string for google map search
         search = " #{params[:sport_type]} near #{params[:area]}"
         @facilities = CLIENT.spots_by_query(search)
+        render json: @facilities
       else
         flash[:alert] = "Sorry we don't have any information for that sport"
         redirect_to root_path
