@@ -2,7 +2,7 @@ var app = angular.module('SportFinder', ['ngRoute']);
 
 // Routes
 
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
   $routeProvider
   .when('/', {
     templateUrl: 'app/views/home.html',
@@ -28,5 +28,11 @@ app.config(['$routeProvider', function($routeProvider){
     templateUrl: 'app/views/facility.html',
     controller: 'FacilityController'
   })
-  .otherwise( {redirectTo: '/'});
+  .when('/search', {
+    templateUrl: 'app/views/results.html',
+    controller: 'ResultsController'
+  })
+  .otherwise( {redirectTo: '/'}
+    );
+
 }]);

@@ -1,12 +1,13 @@
+{{results}}
 <table class="table table-hover">
   <thead>
     <h3>Search Results</h3>
   </thead>
   <tbody>
-      <tr ng-repeat="facility in facilities">
+      <tr ng-repeat="facility in results">
       <td>
       <h3>{{facility.name}}</h3>
-        <img class="search_images" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w">
+        <img class="search_images" src="{{facility.photos && facility.photos[0].fetch_url(800) || 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR6DvWxavCtGlz3CHRmACBDlv_hCDKlEHC5RiCsAqxp6T1RBEzf1w'}}">
       <br>
       <br>
       Address: {{facility.formatted_address}}
