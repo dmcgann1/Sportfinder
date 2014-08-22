@@ -52,5 +52,20 @@ app.controller('FacilityController', ['$scope', 'facilityFactory', '$routeParams
       });
   };
 
+  $scope.upVote = function(reviewId) {
+    reviewFactory.upvote(reviewId)
+      .success(init())
+      .error(function(data){
+        console.log(data);
+      });
+  };
+
+  $scope.downVote = function(reviewId) {
+    reviewFactory.downvote(reviewId)
+      .success(init())
+      .error(function(data){
+        console.log(data);
+      });
+  };
 
 }]);

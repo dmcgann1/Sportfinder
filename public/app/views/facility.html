@@ -38,6 +38,9 @@
       <td class="col-md-3">
       <button ng-click="editReview(review.id)" class='btn btn-primary'>Edit</button>
       <button ng-click="deleteReview(review.id)" class='btn btn-danger'>Delete</button>
+<!-- Need to add logic to only display buttons depending on whether user is logged in or not -->
+      <button ng-click="upVote(review.id)" class='btn btn-success'>Useful</button>
+      <button ng-click="downVote(review.id)" class='btn btn-danger'>Not Useful</button>
       </td>
       </tr>
   </tbody>

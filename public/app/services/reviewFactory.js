@@ -15,5 +15,15 @@ app.factory('reviewFactory', ['$http', function($http) {
     return $http.delete('/facilities/' + facilityId + '/reviews/' + reviewId);
   };
 
+  factory.upvote = function(reviewId) {
+    var data = {is_up: true};
+    return $http.post('/reviews/' + reviewId + '/votes', data);
+  };
+
+  factory.downvote = function(reviewId) {
+    var data = {is_up: false};
+    return $http.post('/reviews/' + reviewId + '/votes', data);
+  };
+
   return factory;
 }]);
