@@ -1,4 +1,4 @@
-
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 .homepage {
   padding-top: 100px;
 }
