@@ -3,9 +3,10 @@ class FacilitySerializer < ActiveModel::Serializer
 
   def reviews
     array = []
-    object.reviews.each do |review|
+    object.reviews.sort_by(&:score).reverse.each do |review|
       array << {id: review.id, user: review.user.name, score: review.score, body: review.body}
     end
     array
   end
 end
+
