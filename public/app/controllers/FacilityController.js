@@ -29,5 +29,28 @@ app.controller('FacilityController', ['$scope', 'facilityFactory', '$routeParams
     });
   };
 
+  $scope.editReview = function(reviewId) {
+    var modalOptions = {
+        closeButtonText: 'Cancel',
+        actionButtonText: 'Update',
+        headerText: 'Edit review',
+    };
+    modalService.showModal({}, modalOptions).then(function(result){
+      reviewFactory.updateReview(facilityId, reviewId, result)
+        .success(init())
+        .error(function(data){
+          console.log(data);
+        });
+    });
+  };
+
+  $scope.deleteReview = function(reviewId) {
+    reviewFactory.delReview(facilityId, reviewId)
+      .success(init())
+      .error(function(data){
+        console.log(data);
+      });
+  };
+
 
 }]);
