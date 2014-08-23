@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :sports, only: [:index]
   resources :users, only: [:show]
-  resources :bookings, only: [:index, :new, :create]
+  resources :bookings, defaults: {format: :json}, only: [:index, :new, :create]
 
   resources :facilities, only: [:show] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
@@ -19,7 +19,5 @@ Rails.application.routes.draw do
   resources :user_sports, only: [:create]
 
   get '/favourites' => 'facilities#favourites', as: :favourites
-  get "main/index"
-  #Would like to try refactor this as Alex said it should be a get not post
   post '/facilities/search' => 'facilities#search'
 end

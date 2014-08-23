@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = current_user.bookings.create(booking_params)
-    redirect_to root_path
+    render json: @booking
   end
 
   private

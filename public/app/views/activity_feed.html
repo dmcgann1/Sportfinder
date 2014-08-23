@@ -8,6 +8,34 @@
 <br>
 <br>
 <br>
+<!-- <button ng-click="newBooking()" class='btn btn-primary'>New Booking</button> -->
+<br>
+<form class="booking" role="booking" ng-submit="newBooking(sportId, userId, facilityId, time)">
+  <div class="input-group">
+    <span class="input-group-addon"><strong>Play</strong></span>
+<!--     <select ng-model="booking.sport" ng-options="sport.id as sport.name for sport in user.sports" >
+          <option value="">Please choose a Sport</option>
+    </select> -->
+    <input type="text" class="form-control" placeholder="Sport ..." ng-model="sportId">
+    <span class="input-group-addon"><strong>with</strong></span>
+    <input type="text" class="form-control" placeholder="Player ..." ng-model="userId">
+<!--     <select ng-model="booking.player" ng-options="friend.id as friend.name for friend in user.friends" >
+          <option value="">Please choose a Player</option>
+    </select> -->
+    <span class="input-group-addon"><strong>@</strong></span>
+    <input type="text" class="form-control" placeholder="Facility ..." ng-model="facilityId">
+<!--     <select ng-model="booking.sport" ng-options="sport.id as sport.name for sport in user.sports" >
+          <option value="">Please choose a Facility</option>
+    </select> -->
+    <span class="input-group-addon"><strong>at</strong></span>
+    <input type="time" class="form-control" placeholder="Time ..." ng-model="time">
+<!--     <select ng-model="booking.sport" ng-options="facility.id as facility.name for facility in user.facilities" >
+          <option value="">Please choose a Time</option>
+    </select> -->
+  </div>
+  <button type="submit" class="btn btn-warning">Search</button>
+</form>
+<br>
 <div ng-repeat="booking in bookings">
   <div ng-repeat="user in booking.users">
   {{user.name}} and

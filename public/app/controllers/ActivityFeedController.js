@@ -10,4 +10,10 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', funct
       });
   }
   init();
+
+  $scope.newBooking = function(sportId, userId, facilityId, time) {
+    activityFeedFactory.addBooking(sportId, userId, facilityId, time)
+      .success(init());
+
+  };
 }]);
