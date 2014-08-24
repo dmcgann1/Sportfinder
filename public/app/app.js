@@ -1,4 +1,4 @@
-var app = angular.module('SportFinder', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('SportFinder', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'mgcrea.ngStrap']);
 
 // Routes
 

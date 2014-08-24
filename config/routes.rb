@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :sports, only: [:index]
   resources :users, only: [:show]
-  resources :bookings, defaults: {format: :json}, only: [:index, :new, :create]
+  resources :bookings, only: [:index, :new, :create]
 
   resources :facilities, only: [:show] do
     resources :reviews, only: [:new, :create, :edit, :update, :destroy]
