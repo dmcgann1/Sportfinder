@@ -1,6 +1,7 @@
-app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'sportsFactory', 'userFactory', 'myFacilitiesFactory', function($scope, activityFeedFactory, sportsFactory, userFactory, myFacilitiesFactory) {
+app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'sportsFactory', 'userFactory', 'myFacilitiesFactory', '$http', function($scope, activityFeedFactory, sportsFactory, userFactory, myFacilitiesFactory, $http) {
 
   function init() {
+// If not refactored then define this outside of init so that only this piece gets called on successful new booking
     activityFeedFactory.getBookings()
       .success(function(bookings) {
         $scope.bookings = bookings;
@@ -42,9 +43,22 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
   $scope.selectedPlayer = undefined;
   $scope.selectedFacility = undefined;
 
-  $scope.newBooking = function(sportId, userId, facilityId, time) {
-    activityFeedFactory.addBooking(sportId, userId, facilityId, time)
-      .success(init());
 
+  $scope.newBooking = function(sportId, userId1, userId2, facilityId, time) {
+    // activityFeedFactory.addBooking(sportId, userId1, userId2, facilityId, time)
+    activityFeedFactory.addBooking(43, 6, 8, 2, time)
+      .success(init());
   };
+
+  $scope.loadTags = function(query) {
+    // console.log($http.get('/sports'));
+     return sportsFactory.search(query)
+     //.then(function(sports){
+//      console.log("foo is " + sports);
+    //   });
+
+      // .success(function(result) {
+      //   console.log(result);
+  };
+
 }]);

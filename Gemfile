@@ -45,7 +45,7 @@ gem 'omniauth-facebook'
 
 gem "bullet", :group => "development"
 
-gem 'rack-mini-profiler'
+gem 'rack-mini-profiler', group: :development
 
 gem 'koala'
 

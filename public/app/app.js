@@ -1,4 +1,4 @@
-var app = angular.module('SportFinder', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'mgcrea.ngStrap']);
+var app = angular.module('SportFinder', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngTagsInput']);
 
 // Routes
 
@@ -17,8 +17,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     controller: 'SportsController'
   })
   .when('/activityfeed', {
-    templateUrl: 'app/views/activity_feed.html',
-    controller: 'ActivityFeedController'
+    controller: 'ActivityFeedController',
+    templateUrl: 'app/views/activity_feed.html'
   })
   .when('/myfacilities', {
     templateUrl: 'app/views/my_facilities.html',
