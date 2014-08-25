@@ -50,15 +50,8 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
       .success(init());
   };
 
-  $scope.loadTags = function(query) {
-    // console.log($http.get('/sports'));
-     return sportsFactory.search(query)
-     //.then(function(sports){
-//      console.log("foo is " + sports);
-    //   });
-
-      // .success(function(result) {
-      //   console.log(result);
+  $scope.loadTags = function(query, userId) {
+    return userFactory.search(query, userId);
   };
 
 }]);

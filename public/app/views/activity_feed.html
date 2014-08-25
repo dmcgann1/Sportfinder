@@ -8,9 +8,32 @@
 <br>
 <br>
 <br>
+<form class="booking" role="booking" ng-submit="newBooking(selectedSport.id, selectedPlayer.id, selectedFacility.id, time)">
+  <div class="input-group container-fluid">
+
+    <span class="input-group-addon"><strong>Play</strong></span>
+    <input type="text" ng-model="selectedSport" typeahead="sport as sport.name for sport in sports | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Sport ...">
+
+    <span class="input-group-addon"><strong>with</strong></span>
+    <tags-input type="text" ng-model="friends" display-property="name" add-from-autocomplete-only="true">
+      <auto-complete min-length="1" source="loadTags($query, 7)"></auto-complete>
+    </tags-input>
+
+    <span class="input-group-addon"><strong>@</strong></span>
+    <input type="text" ng-model="selectedFacility" typeahead="facility as facility.name for facility in facilities | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Facility ...">
+
+    <span class="input-group-addon"><strong>at</strong></span>
+    <div class="form-group">
+      <input type="text" size="10" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Date" bs-datepicker>
+      <input type="text" size="8" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Time" bs-timepicker>
+    </div>
+    <!-- <input type="time" class="form-control" placeholder="Time ..." ng-model="time"> -->
+  </div>
+  <button type="submit" class="btn btn-warning">Book</button>
+</form>
 <br>
 
-
+<!-- Form for making a booking (only accepts one user) -->
 <form class="booking" role="booking" ng-submit="newBooking(selectedSport.id, selectedPlayer.id, selectedFacility.id, time)">
   <div class="input-group container-fluid">
 
@@ -26,17 +49,15 @@
     <span class="input-group-addon"><strong>at</strong></span>
     <div class="form-group">
       <input type="text" size="10" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Date" bs-datepicker>
-      <input type="text" size="8" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Time" bs-timepicker>
+      <!-- <input type="text" size="8" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Time" bs-timepicker> -->
     </div>
     <!-- <input type="time" class="form-control" placeholder="Time ..." ng-model="time"> -->
   </div>
   <button type="submit" class="btn btn-warning">Book</button>
 </form>
-<br>
-<br>
 
-<!-- <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" /> -->
-<input id="tagtest" type="text" data-role="tagsinput" />
+<br>
+<br>
 
 <div ng-repeat="booking in bookings">
   <div ng-repeat="user in booking.users">
@@ -46,12 +67,14 @@
 </div>
 
 
-<!-- <script src="scripts/bootstrap-tagsinput/bootstrap-tagsinput.js"></script> -->
-<tags-input ng-model="tags"></tags-input>
 
-<tags-input type="text" ng-model="sports" display-property="name" add-from-autocomplete-only="true">
+<!-- <tags-input type="text" ng-model="sports" display-property="name" add-from-autocomplete-only="true">
   <auto-complete min-length="1" source="loadTags($query)"></auto-complete>
+</tags-input> -->
+
+<tags-input type="text" ng-model="friends" display-property="name" add-from-autocomplete-only="true">
+  <auto-complete min-length="1" source="loadTags($query, 7)"></auto-complete>
 </tags-input>
 
-{{sports}}
+{{friends}}
 
