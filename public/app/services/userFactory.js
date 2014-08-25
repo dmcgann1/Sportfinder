@@ -17,7 +17,6 @@ app.factory('userFactory', ['$http','$q', function($http, $q) {
     // Subsequently we have memoized the list of user.friends in all_friends
     // so we don't need to make the remote Ajax request.
     if(all_friends.length === 0) {
-      //$http.get('/sports').success(function(results){
       factory.getUser(userId).success(function(result){
         all_friends = result.friends;
         friends = factory.filter(query, all_friends);
