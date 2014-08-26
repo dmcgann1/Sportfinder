@@ -42,11 +42,13 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
   $scope.selectedSport = undefined;
   $scope.selectedPlayer = undefined;
   $scope.selectedFacility = undefined;
+  $scope.taggedFriendsIds = [];
 
 
-  $scope.newBooking = function(sportId, userId1, userId2, facilityId, time) {
-    // activityFeedFactory.addBooking(sportId, userId1, userId2, facilityId, time)
-    activityFeedFactory.addBooking(43, 6, 8, 2, time)
+  $scope.newBooking = function(sportId, taggedFriendsIds, facilityId, time) {
+    $scope.taggedFriendsIds = $scope.taggedFriends.map(function(person) {return person.id;});
+
+    activityFeedFactory.addBooking(sportId, $scope.taggedFriendsIds, facilityId, time)
       .success(init());
   };
 

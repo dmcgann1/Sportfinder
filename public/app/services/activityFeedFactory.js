@@ -5,8 +5,14 @@ app.factory('activityFeedFactory', ['$http', function($http) {
     return $http.get('/bookings');
   };
 
-  factory.addBooking = function(sportId, userId1, userId2, facilityId, time) {
-    var data = {booking: {sport_id: sportId, facility_id: facilityId, time: time, user_bookings_attributes: [{user_id: userId1}, {user_id: userId2}]}};
+  factory.addBooking = function(sportId, taggedFriendsIds, facilityId, time) {
+    var user_bookings_attributes = [];
+
+    for (var i = 0; i < taggedFriendsIds.length; i++) {
+      user_bookings_attributes.push({user_id: taggedFriendsIds[i]});
+    }
+
+    var data = {booking: {sport_id: sportId, facility_id: facilityId, time: time, user_bookings_attributes: user_bookings_attributes}};
     return $http.post('/bookings', data);
   };
 

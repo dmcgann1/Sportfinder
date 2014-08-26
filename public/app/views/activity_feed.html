@@ -8,14 +8,14 @@
 <br>
 <br>
 <br>
-<form class="booking" role="booking" ng-submit="newBooking(selectedSport.id, selectedPlayer.id, selectedFacility.id, time)">
+<form class="booking" role="booking" ng-submit="newBooking(selectedSport.id, taggedFriendsIds, selectedFacility.id, time)">
   <div class="input-group container-fluid">
 
     <span class="input-group-addon"><strong>Play</strong></span>
     <input type="text" ng-model="selectedSport" typeahead="sport as sport.name for sport in sports | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Sport ...">
 
     <span class="input-group-addon"><strong>with</strong></span>
-    <tags-input type="text" ng-model="friends" display-property="name" add-from-autocomplete-only="true">
+    <tags-input type="text" ng-model="taggedFriends" display-property="name" add-from-autocomplete-only="true">
       <auto-complete min-length="1" source="loadTags($query, 7)"></auto-complete>
     </tags-input>
 
@@ -72,9 +72,11 @@
   <auto-complete min-length="1" source="loadTags($query)"></auto-complete>
 </tags-input> -->
 
-<tags-input type="text" ng-model="friends" display-property="name" add-from-autocomplete-only="true">
+<tags-input type="text" ng-model="taggedFriends" display-property="name" add-from-autocomplete-only="true">
   <auto-complete min-length="1" source="loadTags($query, 7)"></auto-complete>
 </tags-input>
 
-{{friends}}
+{{taggedFriends}}
+<br>
+{{taggedFriends.length}}
 
