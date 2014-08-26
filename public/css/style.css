@@ -141,3 +141,7 @@ thead h3 .btn {
 .navbar-default .navbar-nav .dropdown-menu li a {
   color: black;
 }
+
+.activity-feed-bookings {
+  display: inline;
+}

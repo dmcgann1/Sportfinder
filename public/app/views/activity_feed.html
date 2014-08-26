@@ -60,7 +60,8 @@
 <br>
 
 <div ng-repeat="booking in bookings">
-  <div ng-repeat="user in booking.users">
+  <div class="activity-feed-bookings" ng-repeat="user in booking.users">
+  <!-- Change to User who booked with image first -->
   {{user.name}},
   </div>
   are playing {{booking.sport.name}} @ {{booking.facility.name}} at {{booking.time | date: 'medium'}}
