@@ -14,4 +14,11 @@ app.controller('NavbarController', ['$scope', '$location', 'userFactory', functi
   $scope.search = function(term1, term2) {
     $location.path('/search').search('q', [term1, term2]);
   };
+
+  $scope.logout = function() {
+    console.log("i got pressed");
+    userFactory.logout()
+      .success($location.path('/activityfeed'))
+      .error($location.path('/activityfeed'));
+  };
 }]);

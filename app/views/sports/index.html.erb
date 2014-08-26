@@ -4,3 +4,13 @@
     <li><%= link_to sport.name, user_sports_path(sport_id: sport), method: :post %></li>
   <% end %>
 </ul>
+
+<%= button_to user_omniauth_authorize_path(:facebook), method: :get, class: 'btn btn-block btn-social btn-facebook btn-lg' do %><i class="fa fa-facebook"></i>Log in with Facebook<% end %>
+
+<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+
+<% if current_user %>
+<%=current_user.name %>
+<% else %>
+This must be working
+<% end %>

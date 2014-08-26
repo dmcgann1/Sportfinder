@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  # root 'home#show'
-
   resources :sports, only: [:index]
   resources :users, only: [:show]
   resources :bookings, only: [:index, :new, :create]
@@ -20,4 +18,7 @@ Rails.application.routes.draw do
 
   get '/favourites' => 'facilities#favourites', as: :favourites
   post '/facilities/search' => 'facilities#search'
+
+  root 'home#show'
+
 end

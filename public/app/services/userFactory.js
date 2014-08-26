@@ -6,6 +6,10 @@ app.factory('userFactory', ['$http','$q', function($http, $q) {
     return $http.get('/users/' + userId);
   };
 
+  factory.logout = function() {
+    return $http.delete('/users/sign_out');
+  };
+
   factory.filter = function(query, all_friends) {
     return all_friends.filter( function(x){return x.name.toLowerCase().indexOf(query.toLowerCase()) > -1;});
   };
