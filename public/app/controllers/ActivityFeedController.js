@@ -38,7 +38,7 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
       });
   }
   init();
-
+// are these 3 needed to be specified as undefined?
   $scope.selectedSport = undefined;
   $scope.selectedPlayer = undefined;
   $scope.selectedFacility = undefined;

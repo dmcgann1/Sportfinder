@@ -17,6 +17,7 @@
 .navbar-right .btn {
   margin-right: 6px;
   margin-top: 8px;
+  color: white;
 }
 
 /*body {
@@ -121,4 +122,17 @@ thead h3 .btn {
 .btn-facebook {
   margin-top: 100px;
   width: 300px;
+}
+
+.navbar-profile-image {
+  width: 19px;
+  border-radius: 10%;
+}
+
+.navbar-default .navbar-nav li a {
+  color: white;
+}
+
+.fa-bars {
+  color: white;
 }

@@ -15,7 +15,7 @@
     <input type="text" ng-model="selectedSport" typeahead="sport as sport.name for sport in sports | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Sport ...">
 
     <span class="input-group-addon"><strong>with</strong></span>
-    <tags-input type="text" ng-model="taggedFriends" display-property="name" add-from-autocomplete-only="true">
+    <tags-input class="bootstrapCustom" replace-spaces-with-dashes="false" type="text" ng-model="taggedFriends" display-property="name" add-from-autocomplete-only="true" placeholder="Add friend ...">
       <auto-complete min-length="1" source="loadTags($query, 7)"></auto-complete>
     </tags-input>
 

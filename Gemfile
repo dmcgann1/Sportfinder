@@ -45,7 +45,8 @@ gem 'omniauth-facebook'
 
 gem "bullet", :group => "development"
 
-gem 'rack-mini-profiler', group: :development
+# This is for testing the page load speed - turned off until we test
+# gem 'rack-mini-profiler', group: :development
 
 gem 'koala'
 
