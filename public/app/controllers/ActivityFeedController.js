@@ -45,10 +45,10 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
   $scope.taggedFriendsIds = [];
 
 
-  $scope.newBooking = function(sportId, taggedFriendsIds, facilityId, time) {
+  $scope.newBooking = function(sportId, taggedFriendsIds, facilityId, sharedDate) {
     $scope.taggedFriendsIds = $scope.taggedFriends.map(function(person) {return person.id;});
 
-    activityFeedFactory.addBooking(sportId, $scope.taggedFriendsIds, facilityId, time)
+    activityFeedFactory.addBooking(sportId, $scope.taggedFriendsIds, facilityId, sharedDate)
       .success(init());
   };
 
