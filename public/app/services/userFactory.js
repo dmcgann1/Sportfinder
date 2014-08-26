@@ -2,6 +2,10 @@ app.factory('userFactory', ['$http','$q', function($http, $q) {
   var factory = {},
     all_friends = [];
 
+  factory.getMe = function() {
+    return $http.get('/users');
+  };
+
   factory.getUser = function(userId) {
     return $http.get('/users/' + userId);
   };

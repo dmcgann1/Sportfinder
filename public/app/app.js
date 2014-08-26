@@ -2,7 +2,7 @@ var app = angular.module('SportFinder', ['ngRoute', 'Devise','ui.bootstrap', 'ng
 
 // Routes
 
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+app.config(['$routeProvider', '$locationProvider', 'AuthProvider', function($routeProvider, $locationProvider, AuthProvider){
   $routeProvider
   .when('/', {
     templateUrl: 'app/views/home.html',

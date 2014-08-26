@@ -1,8 +1,9 @@
 app.controller('NavbarController', ['$scope', '$location', 'userFactory', function($scope, $location, userFactory) {
 
   function init() {
-    userFactory.getUser(7)
+    userFactory.getMe()
       .success(function(user) {
+        console.log(user);
         $scope.user = user;
       })
       .error(function(data){
@@ -16,9 +17,8 @@ app.controller('NavbarController', ['$scope', '$location', 'userFactory', functi
   };
 
   $scope.logout = function() {
-    console.log("i got pressed");
     userFactory.logout()
-      .success($location.path('/activityfeed'))
-      .error($location.path('/activityfeed'));
+      .success($location.path('/'))
+      .error($location.path('/'));
   };
 }]);

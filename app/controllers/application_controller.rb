@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
   end
 
+  def after_sign_in_path_for(resource)
+    '/#/activityfeed'
+  end
+
   protected
 
   def verified_request?

@@ -4,6 +4,11 @@ class UsersController < ApplicationController
     {root: false}
   end
 
+  def index
+    @user = current_user
+    render json: @user
+  end
+
   def show
     @user = User.find(params[:id])
     render json: @user
