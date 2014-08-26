@@ -63,7 +63,7 @@
   <div ng-repeat="user in booking.users">
   {{user.name}},
   </div>
-  are playing {{booking.sport.name}} @ {{booking.facility.name}} at {{booking.time}}
+  are playing {{booking.sport.name}} @ {{booking.facility.name}} at {{booking.time | date: 'medium'}}
 </div>
 
 

@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20140815204421) do
   enable_extension "plpgsql"
 
   create_table "bookings", force: true do |t|
-    t.integer "facility_id"
-    t.integer "sport_id"
-    t.time    "time"
+    t.integer  "facility_id"
+    t.integer  "sport_id"
+    t.datetime "time"
   end
 
   add_index "bookings", ["facility_id"], name: "index_bookings_on_facility_id", using: :btree
