@@ -10,5 +10,5 @@ app.controller('NavbarController', ['$scope', '$location', 'userFactory', functi
         $scope.current_user = null,
         $location.path('/'))
       .error(alert('failed to logout'));
-  };
+    };
 }]);

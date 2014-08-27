@@ -37,8 +37,6 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
         console.log(data);
       });
 
-    checkUserStatus();
-    console.log(hasUser);
   }
   init();
 // are these 3 needed to be specified as undefined?
