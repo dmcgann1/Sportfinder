@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" bs-navbar>
   <div class="container-fluid">
   <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -26,9 +26,25 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><button type="button" class="btn btn-success">Book a game!</button></li>
+        <li><button type="button" class="btn btn-success" data-animation="am-fade-and-slide-top" data-template="app/views/booking.html" bs-modal="modal">Book a game!</button>
+          <span class="dropdown" on-toggle="toggled(open)">
+            <a href class="dropdown-toggle">
+              Click me for a dropdown, yo!
+            </a>
+            <ul class="dropdown-menu">
+              <li>Test 1</li>
+              <li>Test 2</li>
+              <li>Test 2</li>
+              <li>Test 2</li>
+              <li>Test 2</li>
+              <li>Test 2</li>
+              <li>Test 2</li>
+              </li>
+            </ul>
+          </span>
+        </li>
         <!-- <li><button type="button" class="btn btn-danger">Favourites</button></li> -->
-        <li><a href="#/users/{{current_user.id}}"><img ng-src="{{current_user.image}}" class="navbar-profile-image"> My Profile</a></li>
+        <li ng-show="hasUser"><a href="#/users/{{current_user.id}}"><img ng-src="{{current_user.image}}" class="navbar-profile-image"> My Profile</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars fa-lg"></i></a>
           <ul class="dropdown-menu" role="menu">
@@ -43,3 +59,9 @@
     </div>
   </div>
 </nav>
+
+<button type="button" class="btn btn-lg btn-primary" data-animation="am-fade-and-scale" data-placement="center" data-template="app/views/booking.html" bs-modal="modal">Click to toggle modal
+  <br>
+  <small>(using an object)</small>
+</button>
+

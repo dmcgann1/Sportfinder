@@ -27,4 +27,10 @@ app.controller('AppController',['$rootScope', '$scope', 'userFactory', function(
     $scope.loggedIn();
   });
 
+  $scope.canBook = false;
+
+  $scope.showBooking = function() {
+    $scope.canBook = !$scope.canBook;
+  };
+
 }]);

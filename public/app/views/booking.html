@@ -1,0 +1,78 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" ng-show="title">
+        <button type="button" class="close" ng-click="$hide()">&times;</button>
+        <h4 class="modal-title" ng-bind-html="title"></h4>
+      </div>
+      <div class="modal-body" ng-show="true">
+
+      <form class="booking" role="booking" ng-submit="newBooking(selectedSport.id, taggedFriendsIds, selectedFacility.id, sharedDate)">
+        <div class="input-group container-fluid">
+
+          <span class="input-group-addon"><strong>Play</strong></span>
+          <input type="text" ng-model="selectedSport" typeahead="sport as sport.name for sport in sports | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Sport ...">
+
+
+          <span class="input-group-addon"><strong>with</strong></span>
+          <tags-input class="bootstrapCustom" replace-spaces-with-dashes="false" type="text" ng-model="taggedFriends" display-property="name" add-from-autocomplete-only="true" placeholder="Add friend ...">
+            <auto-complete min-length="1" source="loadTags($query, 7)"></auto-complete>
+          </tags-input>
+
+          <span class="input-group-addon"><strong>@</strong></span>
+          <input type="text" ng-model="selectedFacility" typeahead="facility as facility.name for facility in facilities | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Facility ...">
+
+          <span class="input-group-addon"><strong>at</strong></span>
+          <div class="form-group">
+            <input type="text" size="10" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Date" bs-datepicker>
+            <input type="text" size="8" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Time" bs-timepicker>
+          </div>
+          <input type="time" class="form-control" placeholder="Time ..." ng-model="time">
+        </div>
+        <button type="submit" class="btn btn-warning">Book</button>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$hide()">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="$hide()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div > -->
+
+<br>
+
+
+<!--  <form class="form-inline" role="form">
+  <div class="form-group">
+    <label>Icon</label>
+    <input type="text" class="form-control" ng-model="selectedSport" data-min-length="0" data-html="1" data-animation="am-flip-x" ng-options="sport as sport.name for sport in sports" placeholder="Enter icon" bs-typeahead>
+  </div>
+</form>
+</div> -->
+
+
+
+<!-- Keeping this for style comparison -->
+<!-- <form class="booking" role="booking" ng-submit="newBooking(selectedSport.id, selectedPlayer.id, selectedFacility.id, time)">
+  <div class="input-group container-fluid">
+
+    <span class="input-group-addon"><strong>Play</strong></span>
+    <input type="text" ng-model="selectedSport" typeahead="sport as sport.name for sport in sports | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Sport ...">
+
+    <span class="input-group-addon"><strong>with</strong></span>
+    <input type="text" ng-model="selectedPlayer" typeahead="friend as friend.name for friend in current_user.friends | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Player ...">
+
+    <span class="input-group-addon"><strong>@</strong></span>
+    <input type="text" ng-model="selectedFacility" typeahead="facility as facility.name for facility in facilities | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Facility ...">
+
+    <span class="input-group-addon"><strong>at</strong></span>
+    <div class="form-group">
+      <input type="text" size="10" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Date" bs-datepicker> -->
+      <!-- <input type="text" size="8" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Time" bs-timepicker> -->
+    <!-- </div> -->
+    <!-- <input type="time" class="form-control" placeholder="Time ..." ng-model="time"> -->
+<!--   </div>
+  <button type="submit" class="btn btn-warning">Book</button>
+</form> -->

@@ -24,6 +24,7 @@ body {
   /*background-image: url("http://www.consciousconnectionmagazine.com/wp-content/uploads/2013/05/yoga-alliance.jpg");*/
   /*background-image: url("http://megahdwall.com/wp-content/uploads/2014/06/Golf-Club-High-Quality-503493.jpg");*/
   background-size: cover;
+  margin-top: 65px;
 }
 
 .search_images {
@@ -144,4 +145,21 @@ thead h3 .btn {
 
 .activity-feed-bookings {
   display: inline;
+}
+
+.modal-backdrop.am-fade {
+  opacity: .5;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: .5;
+    }
+  }
+  &.ng-leave {
+    opacity: .5;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
 }

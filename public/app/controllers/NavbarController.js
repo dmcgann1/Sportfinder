@@ -11,4 +11,7 @@ app.controller('NavbarController', ['$scope', '$location', 'userFactory', functi
         $location.path('/'))
       .error(alert('failed to logout'));
     };
+
+    $scope.animals = ["cat", "dog", "tiger"];
+
 }]);
