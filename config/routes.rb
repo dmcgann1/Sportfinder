@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   get '/favourites' => 'facilities#favourites', as: :favourites
   post '/facilities/search' => 'facilities#search'
 
-  root 'home#show'
+  # root 'home#show'
 
 end

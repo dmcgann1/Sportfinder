@@ -26,10 +26,11 @@
 </head>
 <body>
   <div class='container'>
-
-    <div ng-include src="'app/views/navbar.html'" ng-controller="NavbarController">
-    </div>
-    <div x-ng-view>
+    <div ng-controller="AppController">
+      <div ng-include src="'app/views/navbar.html'" ng-controller="NavbarController">
+      </div>
+      <div x-ng-view>
+      </div>
     </div>
   </div>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -57,6 +58,7 @@
   <script src="app/services/modalService.js"></script>
   <script src="app/services/reviewFactory.js"></script>
 
+  <script src="app/controllers/AppController.js"></script>
   <script src="app/controllers/HomeController.js"></script>
   <script src="app/controllers/SportsController.js"></script>
   <script src="app/controllers/ProfileController.js"></script>

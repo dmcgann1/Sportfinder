@@ -1,8 +1,8 @@
-var app = angular.module('SportFinder', ['ngRoute', 'Devise','ui.bootstrap', 'ngAnimate', 'ngTagsInput', 'mgcrea.ngStrap']);
+var app = angular.module('SportFinder', ['ngRoute','ui.bootstrap', 'ngAnimate', 'ngTagsInput', 'mgcrea.ngStrap']);
 
 // Routes
 
-app.config(['$routeProvider', '$locationProvider', 'AuthProvider', function($routeProvider, $locationProvider, AuthProvider){
+app.config(['$routeProvider', function($routeProvider){
   $routeProvider
   .when('/', {
     templateUrl: 'app/views/home.html',
@@ -10,7 +10,7 @@ app.config(['$routeProvider', '$locationProvider', 'AuthProvider', function($rou
   })
   .when('/users/:userId',{
     templateUrl: 'app/views/profile.html',
-    controller: 'ProfileController'
+    controller: 'ProfileController',
   })
   .when('/sports', {
     templateUrl: 'app/views/sports.html',
@@ -36,3 +36,13 @@ app.config(['$routeProvider', '$locationProvider', 'AuthProvider', function($rou
     );
 
 }]);
+
+app.run(function($location, $rootScope) {
+  $rootScope.$on("$routeChangeStart", function(event, next, current) {
+    if(!$rootScope.hasUser) {
+      $location.path('/');
+    }
+  });
+});
+
+

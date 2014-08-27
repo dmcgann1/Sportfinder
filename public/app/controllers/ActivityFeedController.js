@@ -20,9 +20,9 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
       });
 
 // Get friends for dropdown
-    userFactory.getUser(7)
-      .success(function(user) {
-        $scope.user = user;
+    userFactory.getMe()
+      .success(function(current_user) {
+        $scope.current_user = current_user;
       })
       .error(function(data){
         console.log(data);
@@ -36,6 +36,9 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
       .error(function(data) {
         console.log(data);
       });
+
+    checkUserStatus();
+    console.log(hasUser);
   }
   init();
 // are these 3 needed to be specified as undefined?
@@ -52,8 +55,8 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', 'spor
       .success(init());
   };
 
-  $scope.loadTags = function(query, userId) {
-    return userFactory.search(query, userId);
+  $scope.loadTags = function(query) {
+    return userFactory.search(query);
   };
 
 }]);

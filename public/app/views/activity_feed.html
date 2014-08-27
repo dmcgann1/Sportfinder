@@ -41,7 +41,7 @@
     <input type="text" ng-model="selectedSport" typeahead="sport as sport.name for sport in sports | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Sport ...">
 
     <span class="input-group-addon"><strong>with</strong></span>
-    <input type="text" ng-model="selectedPlayer" typeahead="friend as friend.name for friend in user.friends | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Player ...">
+    <input type="text" ng-model="selectedPlayer" typeahead="friend as friend.name for friend in current_user.friends | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Player ...">
 
     <span class="input-group-addon"><strong>@</strong></span>
     <input type="text" ng-model="selectedFacility" typeahead="facility as facility.name for facility in facilities | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Facility ...">

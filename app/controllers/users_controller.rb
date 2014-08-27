@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @user = current_user
+    @user = current_user || "none"
     render json: @user
   end
 
