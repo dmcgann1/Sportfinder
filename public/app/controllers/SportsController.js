@@ -10,4 +10,9 @@ app.controller('SportsController', ['$scope', 'sportsFactory', function($scope, 
       });
   }
   init();
+
+  $scope.likeSport = function(sportId) {
+    sportsFactory.likeSport(sportId)
+      .success(init());
+  };
 }]);

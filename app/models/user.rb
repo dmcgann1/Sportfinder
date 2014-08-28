@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :votes
   has_many :likes
+  has_many :facilities, through: :likes
   has_many :friendships
   has_many :friends, through: :friendships
   has_many :user_sports

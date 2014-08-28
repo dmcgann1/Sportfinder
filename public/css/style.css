@@ -37,6 +37,16 @@
   max-height: 60px;
 }
 
+.fav-sports {
+  display: inline;
+}
+
+.fav-sports img {
+  max-height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
 
 body {
 
@@ -68,15 +78,15 @@ body {
   margin-bottom: 0px;
 }
 
+a {
+  color: black;
+}
+
 .profile-friend {
   display: inline;
   text-align: center;
   padding-left: 5px;
   padding-right: 5px;
-}
-
-a {
-  color: black;
 }
 
 .profile-friend-name h6 {
@@ -86,6 +96,24 @@ a {
 .profile-friend img {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+.profile-facility {
+  display: inline;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.profile-facility-name h6 {
+  margin-top: 2px;
+}
+
+.profile-facility img {
+  margin-left: 5px;
+  margin-right: 5px;
+  max-height: 50px;
+  max-width: 50px;
 }
 
 .search_images {

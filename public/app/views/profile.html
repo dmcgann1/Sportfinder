@@ -11,26 +11,47 @@
     </div>
     <div class="col-md-3">
       <h2 class="text-center">Friends</h2>
-      <a href="#/users/{{friend.id}}"><div class="profile-friend col-md-3" ng-repeat="friend in user.friends">
-        <div class="profile-friend-image">
-          <img src="{{friend.image}}">
+      <a ng-repeat="friend in user.friends" href="#/users/{{friend.id}}">
+        <div class="profile-friend col-md-3">
+          <div class="profile-friend-image">
+            <img src="{{friend.image}}">
+          </div>
+          <div class="profile-friend-name">
+            <h6>{{friend.name}}</h6>
+          </div>
         </div>
-        <div class="profile-friend-name">
-          <h6>{{friend.name}}</h6>
-        </div></a>
-      </div>
+      </a>
     </div>
     <div class="col-md-4">
       <h2 class="text-center">Facilities</h2>
+      <a ng-repeat="facility in user.facilities" href="#/facilities/{{facility.id}}">
+        <div class="profile-facility col-md-3">
+          <div class="profile-facility-image">
+            <img src="{{facility.img_url}}">
+          </div>
+          <div class="profile-facility-name">
+            <h6>{{facility.name}}</h6>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
   <div class="row">
-  <h2><-- Some sport icons here --></h2>
+    <div class="col-md-12">
+      <h4>Favourite Sports</h4>
+    </div>
+  </div>
+  <div class="row" style="margin-left: 5px;">
+    <div class="fav-sports" ng-repeat="sport in user.sports">
+      <img src="{{sport.image}}">
+    </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <h2>Activity Feed</h2>
     </div>
+  </div>
+  <div class="row">
   </div>
 </div>
 
