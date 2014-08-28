@@ -1,20 +1,20 @@
 app.controller('AppController',['$rootScope', '$scope', 'userFactory', function($rootScope, $scope, userFactory) {
 
-  $scope.current_user = "none";
+  $rootScope.current_user = "none";
   $rootScope.hasUser = false;
 
   function init() {
     userFactory.getMe()
       .success(function(current_user) {
-        $scope.current_user = current_user;
+        $rootScope.current_user = current_user;
       });
     }
 
   init();
 
-  $scope.loggedIn = function(){
+  $rootScope.loggedIn = function(){
     // Returns none as having difficulty using null
-    if($scope.current_user === "none") {
+    if($rootScope.current_user === "none") {
       $rootScope.hasUser = false;
     }
     else {
@@ -23,8 +23,8 @@ app.controller('AppController',['$rootScope', '$scope', 'userFactory', function(
     return $rootScope.hasUser;
   };
 
-  $scope.$watch('current_user', function() {
-    $scope.loggedIn();
+  $rootScope.$watch('current_user', function() {
+    $rootScope.loggedIn();
   });
 
   $scope.canBook = false;

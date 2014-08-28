@@ -26,21 +26,39 @@
       </form>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><button type="button" class="btn btn-success" data-animation="am-fade-and-slide-top" data-template="app/views/booking.html" bs-modal="modal">Book a game!</button>
+        <li>
           <span class="dropdown" on-toggle="toggled(open)">
-            <a href class="dropdown-toggle">
-              Click me for a dropdown, yo!
-            </a>
-            <ul class="dropdown-menu">
-              <li>Test 1</li>
-              <li>Test 2</li>
-              <li>Test 2</li>
-              <li>Test 2</li>
-              <li>Test 2</li>
-              <li>Test 2</li>
-              <li>Test 2</li>
-              </li>
-            </ul>
+            <button type="button" class="btn btn-primary dropdown-toggle" data-animation="am-fade-and-slide-top">Book a game!</button>
+            <div class="dropdown-menu">
+              <form ng-controller="BookingController" class="booking" role="booking" ng-submit="newBooking(selectedSport.id, taggedFriendsIds, selectedFacility.id, sharedDate)">
+                <div class="input-group container-fluid">
+
+                  <span class="input-group-addon"><strong>Play</strong></span>
+                  <input type="text" ng-model="selectedSport" typeahead="sport as sport.name for sport in sports | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Sport ...">
+                </div>
+
+                <div class="input-group container-fluid">
+                  <span class="input-group-addon"><strong>with</strong></span>
+                  <tags-input class="bootstrapCustom" replace-spaces-with-dashes="false" type="text" ng-model="taggedFriends" display-property="name" add-from-autocomplete-only="true" placeholder="Add friend ...">
+                    <auto-complete min-length="1" source="loadTags($query, 7)"></auto-complete>
+                  </tags-input>
+                </div>
+
+                <div class="input-group container-fluid">
+                  <span class="input-group-addon"><strong>@</strong></span>
+                  <input type="text" ng-model="selectedFacility" typeahead="facility as facility.name for facility in facilities | filter:$viewValue | limitTo:8" class="form-control" placeholder="Choose a Facility ...">
+                </div>
+
+                <div class="input-group container-fluid">
+                  <span class="input-group-addon"><strong>at</strong></span>
+                  <div class="form-group">
+                    <input type="text" size="10" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Date" bs-datepicker>
+                    <input type="text" size="8" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Time" bs-timepicker>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-warning">Book</button>
+              </form>
+            </div>
           </span>
         </li>
         <!-- <li><button type="button" class="btn btn-danger">Favourites</button></li> -->
@@ -52,7 +70,7 @@
             <li class="divider"></li>
             <li><a href="#">Edit Profile</a></li>
             <li class="divider"></li>
-            <li ng-click="logout()">Logout</li>
+            <li ng-click="logout()"><a>Logout</a></li>
           </ul>
         </li>
       </ul>
@@ -60,8 +78,4 @@
   </div>
 </nav>
 
-<button type="button" class="btn btn-lg btn-primary" data-animation="am-fade-and-scale" data-placement="center" data-template="app/views/booking.html" bs-modal="modal">Click to toggle modal
-  <br>
-  <small>(using an object)</small>
-</button>
 

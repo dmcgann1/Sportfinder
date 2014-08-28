@@ -11,4 +11,6 @@ app.controller('ActivityFeedController', ['$scope', 'activityFeedFactory', funct
       });
   }
 
+  init();
+
 }]);

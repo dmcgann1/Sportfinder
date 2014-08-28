@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
     cookies['XSRF-TOKEN'] = form_authenticity_token if protect_against_forgery?
   end
 
-  def after_sign_in_path_for(resource)
-    '/#/activityfeed'
-  end
+  # def after_sign_in_path_for(resource)
+  #   '/#/activityfeed'
+  # end
 # Uncertain if I need to set the sign out redirect as Sign out is not currently working
   # def after_sign_out_path_for(resource)
   #   '/#/sports'

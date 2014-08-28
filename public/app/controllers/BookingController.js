@@ -1,4 +1,4 @@
-app.controller('BookingController', ['$scope', 'bookingFactory', 'sportsFactory', 'myFacilitiesFactory', function($scope, bookingFactory, sportsFactory, myFacilitiesFactory) {
+app.controller('BookingController', ['$scope', 'bookingFactory', 'sportsFactory', 'myFacilitiesFactory', 'userFactory', '$location', function($scope, bookingFactory, sportsFactory, myFacilitiesFactory, userFactory, $location) {
 
   function init() {
 
@@ -33,7 +33,7 @@ app.controller('BookingController', ['$scope', 'bookingFactory', 'sportsFactory'
     $scope.taggedFriendsIds = $scope.taggedFriends.map(function(person) {return person.id;});
 
     bookingFactory.addBooking(sportId, $scope.taggedFriendsIds, facilityId, sharedDate)
-      .success(init());
+      .success(init(), $location.path('/activityfeed'));
   };
 
   $scope.loadTags = function(query) {

@@ -1,4 +1,4 @@
-app.controller('NavbarController', ['$scope', '$location', 'userFactory', function($scope, $location, userFactory) {
+app.controller('NavbarController', ['$rootScope', '$scope', 'userFactory', '$location', function($rootScope, $scope, userFactory, $location) {
 
   $scope.search = function(term1, term2) {
     $location.path('/search').search('q', [term1, term2]);
@@ -7,11 +7,9 @@ app.controller('NavbarController', ['$scope', '$location', 'userFactory', functi
   $scope.logout = function() {
     userFactory.logout()
       .success(
-        $scope.current_user = null,
+        $rootScope.hasUser = false,
         $location.path('/'))
-      .error(alert('failed to logout'));
+      .error($rootScope.hasUser = false);
     };
-
-    $scope.animals = ["cat", "dog", "tiger"];
 
 }]);

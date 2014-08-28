@@ -2,15 +2,15 @@ var app = angular.module('SportFinder', ['ngRoute','ui.bootstrap', 'ngAnimate', 
 
 // Routes
 
-app.config(['$routeProvider', function($routeProvider){
+app.config(['$routeProvider', function($routeProvider, $http, $rootScope){
   $routeProvider
   .when('/', {
     templateUrl: 'app/views/home.html',
-    controller: 'HomeController'
+    controller: 'HomeController',
   })
   .when('/users/:userId',{
     templateUrl: 'app/views/profile.html',
-    controller: 'ProfileController',
+    controller: 'ProfileController'
   })
   .when('/sports', {
     templateUrl: 'app/views/sports.html',
@@ -18,7 +18,18 @@ app.config(['$routeProvider', function($routeProvider){
   })
   .when('/activityfeed', {
     controller: 'ActivityFeedController',
-    templateUrl: 'app/views/activity_feed.html'
+    templateUrl: 'app/views/activity_feed.html',
+    resolve: {
+      app: function($q, $http, $rootScope) {
+        var defer = $q.defer();
+        $http.get('/users')
+          .success(function(current_user) {
+            $rootScope.current_user = current_user;
+            defer.resolve();
+          });
+        return defer.promise;
+      }
+    }
   })
   .when('/myfacilities', {
     templateUrl: 'app/views/my_facilities.html',

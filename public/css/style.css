@@ -4,7 +4,7 @@
 }
 
 .navbar {
-  background-color: rgba(0,0,0,0.55);
+  background-color: rgba(61, 139, 61, 1);
   border-color: rgba(0,0,0,0.55);
   color: black;
 }
@@ -19,6 +19,7 @@
   margin-top: 8px;
   color: white;
 }
+
 
 body {
   /*background-image: url("http://www.consciousconnectionmagazine.com/wp-content/uploads/2013/05/yoga-alliance.jpg");*/
@@ -124,6 +125,7 @@ thead h3 .btn {
 .btn-facebook {
   margin-top: 100px;
   width: 300px;
+  radius: 0px;
 }
 
 .navbar-profile-image {
@@ -139,13 +141,22 @@ thead h3 .btn {
   color: white;
 }
 
+.form-control {
+  min-width: 300px;
+  min-height: 30px;
+}
+
+.input-group-addon {
+  min-width: 55px;
+}
+
 .navbar-default .navbar-nav .dropdown-menu li a {
   color: black;
 }
 
-.activity-feed-bookings {
+/*.activity-feed {
   display: inline;
-}
+}*/
 
 .modal-backdrop.am-fade {
   opacity: .5;

@@ -1,23 +1,14 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<h2>Activity Feed</h2>
 
-<div ng-repeat="booking in bookings">
-  <div class="activity-feed-bookings" ng-repeat="user in booking.users">
-  <!-- Change to User who booked with image first -->
-  {{user.name}},
-  </div>
-  are playing {{booking.sport.name}} @ {{booking.facility.name}} at {{booking.time | date: 'medium'}}
+<div class="activity-feed" ng-repeat="booking in bookings | orderBy: 'time'">
+    <img src="{{booking.users[0].image}}"> {{booking.users[0].name}} is playing {{booking.sport.name}} with
+    <div ng-repeat="user in booking.users" ng-if="user != booking.users[0]">
+      {{user.name}}
+    </div>
+    @ {{booking.facility.name}} at {{booking.time | date: 'medium'}}
 </div>
+
+
 
 
 
