@@ -242,10 +242,6 @@ thead h3 .btn {
   color: black;
 }
 
-/*.activity-feed {
-  display: inline;
-}*/
-
 .modal-backdrop.am-fade {
   opacity: .5;
   transition: opacity .15s linear;
@@ -261,4 +257,33 @@ thead h3 .btn {
       opacity: 0;
     }
   }
+}
+
+.activity-feed-title {
+  margin-left: 10px;
+}
+.activity-description div {
+  display: inline;
+}
+
+.activity-feed {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.activity-feed img {
+  border-radius: 5px;
+}
+
+.player-name {
+  background-color: #428bca;
+  border: 1px solid #357ebd;
+  border-radius: 5px;
+  color: white;
+  padding: 1px;
+}
+
+.activity-date {
+  color: rgba(145, 151, 163, 1);
 }

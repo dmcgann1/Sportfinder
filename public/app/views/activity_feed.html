@@ -1,13 +1,26 @@
 <div class="white-background">
-<h2>Activity Feed</h2>
-
-<div class="activity-feed" ng-repeat="booking in bookings | orderBy: 'created_at'">
-    <img src="{{booking.users[0].image}}"> {{booking.users[0].name}} is playing {{booking.sport.name}} with
-    <div ng-repeat="user in booking.users" ng-if="user != booking.users[0]">
-      {{user.name}}
+  <div class="row">
+    <div class="col-md-12 activity-feed-title">
+      <h2>Activity Feed</h2>
     </div>
-    @ {{booking.facility.name}} at {{booking.time | date: 'medium'}}
-</div>
+  </div>
+
+  <div class="activity-feed row" ng-repeat="booking in bookings | orderBy: 'created_at'">
+    <div class="col-md-1">
+      <a href="#/users/{{booking.users[0].id}}"><img src="{{booking.users[0].image}}"></a>
+    </div>
+    <div class="col-md-11">
+      <div class="row activity-description">
+        <div><strong><a href="#/users/{{booking.users[0].id}}">{{booking.users[0].name}}</a></strong> is playing <strong>{{booking.sport.name}}</strong> with</div> <div ng-repeat="user in booking.users" ng-if="user != booking.users[0]">
+        <a href="#/users/{{user.id}}"><div class="player-name">{{user.name}}</div></a>
+        </div>
+        <div>@ <a href="#/facilities/{{booking.facility.id}}"><strong>{{booking.facility.name}}</strong></a></div>
+      </div>
+      <div class="row">
+        <p class="activity-date">{{booking.time | date: 'medium'}}</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 

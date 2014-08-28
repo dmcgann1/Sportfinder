@@ -24,8 +24,8 @@ app.controller('BookingController', ['$scope', 'bookingFactory', 'sportsFactory'
   init();
 // are these 3 needed to be specified as undefined?
   $scope.selectedSport = undefined;
-  $scope.selectedPlayer = undefined;
   $scope.selectedFacility = undefined;
+  $scope.sharedDate = undefined;
   $scope.taggedFriendsIds = [];
 
 
