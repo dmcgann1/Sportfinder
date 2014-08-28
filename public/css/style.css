@@ -262,6 +262,7 @@ thead h3 .btn {
 .activity-feed-title {
   margin-left: 10px;
 }
+
 .activity-description div {
   display: inline;
 }
@@ -279,7 +280,7 @@ thead h3 .btn {
 .player-name {
   background-color: #428bca;
   border: 1px solid #357ebd;
-  border-radius: 5px;
+  border-radius: 2px;
   color: white;
   padding: 1px;
 }

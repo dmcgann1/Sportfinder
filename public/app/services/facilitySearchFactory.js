@@ -6,5 +6,9 @@ app.factory('facilitySearchFactory', ['$http', function($http) {
     return $http.post('/facilities/search.json', data);
   };
 
+  factory.getFacility = function(id, reference) {
+    return $http.get("/facilities/id?identifier=" + id + "&reference=" + reference);
+  };
+
   return factory;
 }]);

@@ -10,7 +10,7 @@
       <p>Location: {{user.location}}</p>
     </div>
     <div class="col-md-3">
-      <h2 class="text-center">Friends</h2>
+      <h3 class="text-center">Friends</h3>
       <a ng-repeat="friend in user.friends" href="#/users/{{friend.id}}">
         <div class="profile-friend col-md-3">
           <div class="profile-friend-image">
@@ -23,7 +23,7 @@
       </a>
     </div>
     <div class="col-md-4">
-      <h2 class="text-center">Facilities</h2>
+      <h3 class="text-center">Favourite Facilities</h3>
       <a ng-repeat="facility in user.facilities" href="#/facilities/{{facility.id}}">
         <div class="profile-facility col-md-3">
           <div class="profile-facility-image">
@@ -48,11 +48,26 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h2>Activity Feed</h2>
+      <h3>Activity Feed</h3>
     </div>
   </div>
-  <div class="row">
+  <div class="activity-feed row" ng-repeat="booking in user.bookings | orderBy: 'created_at'">
+    <div class="col-md-1 fav-sports">
+      <img src="{{booking.sport.image}}">
+    </div>
+    <div class="col-md-11">
+      <div class="row activity-description">
+        <div><strong>{{user.name}}</strong> is playing <strong>{{booking.sport.name}}</strong> with</div> <div ng-repeat="user in booking.users" ng-if="user.id != userId">
+        <a href="#/users/{{user.id}}"><div class="player-name">{{user.name}}</div></a>
+        </div>
+        <div>@ <a href="#/facilities/{{booking.facility.id}}"><strong>{{booking.facility.name}}</strong></a></div>
+      </div>
+      <div class="row">
+        <p class="activity-date">{{booking.time | date: 'medium'}}</p>
+      </div>
+    </div>
   </div>
 </div>
+
 
 
