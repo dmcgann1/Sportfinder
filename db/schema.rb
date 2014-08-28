@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20140815204421) do
 
   create_table "sports", force: true do |t|
     t.string "name"
+    t.text   "image"
   end
 
   create_table "user_bookings", force: true do |t|

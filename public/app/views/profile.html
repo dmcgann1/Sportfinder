@@ -10,14 +10,18 @@
       <p>Location: {{user.location}}</p>
     </div>
     <div class="col-md-3">
-      <h2>Friends</h2>
-      <div class="profile-friend" ng-repeat="friend in user.friends">
-        <a href="#/users/{{friend.id}}"><img src="{{friend.image}}"></a>
-        <!-- {{friend.name}} -->
+      <h2 class="text-center">Friends</h2>
+      <a href="#/users/{{friend.id}}"><div class="profile-friend col-md-3" ng-repeat="friend in user.friends">
+        <div class="profile-friend-image">
+          <img src="{{friend.image}}">
+        </div>
+        <div class="profile-friend-name">
+          <h6>{{friend.name}}</h6>
+        </div></a>
       </div>
     </div>
     <div class="col-md-4">
-      <h2>Facilities</h2>
+      <h2 class="text-center">Facilities</h2>
     </div>
   </div>
   <div class="row">
