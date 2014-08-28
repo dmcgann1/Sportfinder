@@ -1,3 +1,4 @@
+<div class="white-background">
 <h2>Activity Feed</h2>
 
 <div class="activity-feed" ng-repeat="booking in bookings | orderBy: 'time'">
@@ -7,7 +8,7 @@
     </div>
     @ {{booking.facility.name}} at {{booking.time | date: 'medium'}}
 </div>
-
+</div>
 
 
 

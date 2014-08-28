@@ -1,33 +1,33 @@
-<img src="{{user.image}}">
-<h2>{{user.name}}'s Profile</h2>
-<br>
-
-<br>
-Name: {{user.name}}
-<br>
-Email: {{user.email}}
-<br>
-Hometown: {{user.hometown}}
-<br>
-Location: {{user.location}}
-<br>
-<br>
-<h2>{{user.name}}'s Friends</h2>
-<br>
-<div ng-repeat="friend in user.friends">
-<img src="{{friend.image}}">
-<br>
-Name: <a href="#/users/{{friend.id}}">{{friend.name}}</a>
-<br>
-Email: {{friend.email}}
+<div class="white-background">
+  <div class="row profile-header">
+    <div class="col-md-1">
+      <img src="{{user.image}}?type=normal">
+    </div>
+    <div class="col-md-4">
+      <h2>{{user.name}}</h2>
+      <p>Email: {{user.email}}</p>
+      <p>Hometown: {{user.hometown}}</p>
+      <p>Location: {{user.location}}</p>
+    </div>
+    <div class="col-md-3">
+      <h2>Friends</h2>
+      <div class="profile-friend" ng-repeat="friend in user.friends">
+        <a href="#/users/{{friend.id}}"><img src="{{friend.image}}"></a>
+        <!-- {{friend.name}} -->
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h2>Facilities</h2>
+    </div>
+  </div>
+  <div class="row">
+  <h2><-- Some sport icons here --></h2>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Activity Feed</h2>
+    </div>
+  </div>
 </div>
-<br>
-<br>
-<h2>{{user.name}}'s Bookings</h2>
-<br>
-<br>
-<h2>{{user.name}}'s Facilities</h2>
-<br>
-<br>
-<h2>{{user.name}}'s Sports</h2>
+
 
