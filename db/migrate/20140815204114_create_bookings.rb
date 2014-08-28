@@ -4,6 +4,8 @@ class CreateBookings < ActiveRecord::Migration
       t.references :facility, index: true
       t.references :sport, index: true
       t.datetime :time
+
+      t.timestamps
     end
   end
 end

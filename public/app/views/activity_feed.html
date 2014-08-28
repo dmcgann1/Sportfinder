@@ -1,7 +1,7 @@
 <div class="white-background">
 <h2>Activity Feed</h2>
 
-<div class="activity-feed" ng-repeat="booking in bookings | orderBy: 'time'">
+<div class="activity-feed" ng-repeat="booking in bookings | orderBy: 'created_at'">
     <img src="{{booking.users[0].image}}"> {{booking.users[0].name}} is playing {{booking.sport.name}} with
     <div ng-repeat="user in booking.users" ng-if="user != booking.users[0]">
       {{user.name}}

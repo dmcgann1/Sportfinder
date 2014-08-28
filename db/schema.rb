@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20140815204421) do
     t.integer  "facility_id"
     t.integer  "sport_id"
     t.datetime "time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "bookings", ["facility_id"], name: "index_bookings_on_facility_id", using: :btree
