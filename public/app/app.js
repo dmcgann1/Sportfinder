@@ -18,18 +18,18 @@ app.config(['$routeProvider', function($routeProvider, $http, $rootScope){
   })
   .when('/activityfeed', {
     controller: 'ActivityFeedController',
-    templateUrl: 'app/views/activity_feed.html',
-    resolve: {
-      app: function($q, $http, $rootScope) {
-        var defer = $q.defer();
-        $http.get('/users')
-          .success(function(current_user) {
-            $rootScope.current_user = current_user;
-            defer.resolve();
-          });
-        return defer.promise;
-      }
-    }
+    templateUrl: 'app/views/activity_feed.html'
+    // resolve: {
+    //   app: function($q, $http, $rootScope) {
+    //     var defer = $q.defer();
+    //     $http.get('/users')
+    //       .success(function(current_user) {
+    //         $rootScope.current_user = current_user,
+    //         defer.resolve();
+    //       });
+    //     return defer.promise;
+    //   }
+    // }
   })
   .when('/myfacilities', {
     templateUrl: 'app/views/my_facilities.html',
